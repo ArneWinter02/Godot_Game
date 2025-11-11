@@ -9,11 +9,11 @@ position = Vector2(620, 0)
 
 [node name="MapTexture" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-165, -51)
+position = Vector2(-22, 307)
 texture = ExtResource("1_qu2b2")
 
 [node name="Player" parent="." instance=ExtResource("2_ncryd")]
-position = Vector2(-167, 84)
+position = Vector2(-111, 311)
 
 [node name="Deko" parent="." instance=ExtResource("3_ncryd")]
-position = Vector2(-45, 136)
+position = Vector2(53, 292)
