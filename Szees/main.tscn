@@ -1,15 +1,26 @@
-[gd_scene load_steps=4 format=3 uid="uid://b0edelq78t3rx"]
+[gd_scene load_steps=8 format=3 uid="uid://b0edelq78t3rx"]
 
 [ext_resource type="Texture2D" uid="uid://dojbwc8uotxea" path="res://Bilder/Bilder/map_sprite_0.png" id="1_qu2b2"]
 [ext_resource type="PackedScene" uid="uid://c0unbanf4wa0g" path="res://Szees/player.tscn" id="2_ncryd"]
 [ext_resource type="PackedScene" uid="uid://cpkt174sd56lj" path="res://Szees/deko.tscn" id="3_ncryd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ncryd"]
+size = Vector2(996, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cg4he"]
+size = Vector2(33, 912)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6eb4f"]
+size = Vector2(1663, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ufuoh"]
+size = Vector2(1659, 34)
 
 [node name="main" type="Node2D"]
 position = Vector2(620, 0)
 
 [node name="MapTexture" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(-22, 307)
 texture = ExtResource("1_qu2b2")
 
 [node name="Player" parent="." instance=ExtResource("2_ncryd")]
@@ -17,3 +28,31 @@ position = Vector2(-111, 311)
 
 [node name="Deko" parent="." instance=ExtResource("3_ncryd")]
 position = Vector2(53, 292)
+
+[node name="MapGrenzen" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="MapGrenzen"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapGrenzen/StaticBody2D"]
+position = Vector2(805.5, 6)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_ncryd")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="MapGrenzen"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapGrenzen/StaticBody2D2"]
+position = Vector2(-807.5, 1)
+shape = SubResource("RectangleShape2D_cg4he")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="MapGrenzen"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapGrenzen/StaticBody2D3"]
+position = Vector2(-8.5, 456.5)
+shape = SubResource("RectangleShape2D_6eb4f")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="MapGrenzen"]
+position = Vector2(-910, 94)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapGrenzen/StaticBody2D4"]
+position = Vector2(910.5, -552)
+shape = SubResource("RectangleShape2D_ufuoh")

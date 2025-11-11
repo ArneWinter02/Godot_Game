@@ -1,14 +1,25 @@
 [gd_scene load_steps=3 format=3 uid="uid://c0unbanf4wa0g"]
 
 [ext_resource type="Script" uid="uid://dvgsgouk1wxd3" path="res://Szees/player.gd" id="1_ik7gq"]
-[ext_resource type="Texture2D" uid="uid://d1jn2o6yw81j3" path="res://Bilder/Bilder/New Piskel-1.png.png" id="1_on7r5"]
 
-[node name="Player" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ik7gq"]
+size = Vector2(5, 12.75)
+
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_ik7gq")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_on7r5")
-
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(2, 0)
+zoom = Vector2(2.5, 2.5)
+limit_left = -180
+limit_top = -450
+limit_right = 1420
+limit_bottom = 450
 position_smoothing_enabled = true
 position_smoothing_speed = 20.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, -14.625)
+shape = SubResource("RectangleShape2D_ik7gq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
