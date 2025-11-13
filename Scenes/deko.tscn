@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cpkt174sd56lj"]
 
 [ext_resource type="Texture2D" uid="uid://rordldagppgm" path="res://Bilder/Bilder/Baum.png" id="1_kivb6"]
-[ext_resource type="Script" uid="uid://svpp5mltfq46" path="res://Szees/deko.gd" id="1_u4xji"]
+[ext_resource type="Script" uid="uid://svpp5mltfq46" path="res://Scripts/deko.gd" id="1_u4xji"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u4xji"]
 size = Vector2(13, 33.75)
