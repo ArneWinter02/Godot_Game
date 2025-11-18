@@ -1,8 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://c0unbanf4wa0g"]
+[gd_scene load_steps=20 format=3 uid="uid://c0unbanf4wa0g"]
 
 [ext_resource type="Texture2D" uid="uid://xvelvfyxlg0x" path="res://Bilder/Bilder/Sprite_sheet_unten.png" id="1_6gj28"]
+[ext_resource type="Script" uid="uid://cetwpmr7d6b2k" path="res://Scenes/player.gd" id="1_vgqql"]
 [ext_resource type="Texture2D" uid="uid://cicimbjm5uofw" path="res://Bilder/Bilder/sprite_sheet_Oben.png" id="2_6gj28"]
 [ext_resource type="Texture2D" uid="uid://c4d0tkwkip1g7" path="res://Bilder/Bilder/sprite_sheet_links.png" id="2_ik7gq"]
+[ext_resource type="Script" uid="uid://fhic1kyjyfs" path="res://Scenes/animated_sprite_2d.gd" id="5_fkybt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ik7gq"]
 size = Vector2(5, 12.75)
@@ -110,6 +112,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_vgqql")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
@@ -128,3 +131,4 @@ sprite_frames = SubResource("SpriteFrames_5rgoc")
 animation = &"down"
 autoplay = "left"
 frame_progress = 0.5997142
+script = ExtResource("5_fkybt")

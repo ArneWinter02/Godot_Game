@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://cx5h32uy8dv4j"]
+[gd_scene load_steps=4 format=3 uid="uid://cx5h32uy8dv4j"]
 
-[node name="Node2D" type="CharacterBody2D"]
+[ext_resource type="Script" uid="uid://b0ekguduy2xp" path="res://Scenes/enemy_spawner.gd" id="1_4b1db"]
+[ext_resource type="Script" uid="uid://cd7g7j7fs02d7" path="res://Scripts/Stats_for_Subjects.gd" id="2_4l853"]
+
+[sub_resource type="Resource" id="Resource_u7cdh"]
+script = ExtResource("2_4l853")
+base_max_health = null
+base_damage = null
+base_bullet_speed = null
+metadata/_custom_type_script = "uid://cd7g7j7fs02d7"
+
+[node name="Node2D" type="Sprite2D"]
+script = ExtResource("1_4b1db")
+stats = SubResource("Resource_u7cdh")
