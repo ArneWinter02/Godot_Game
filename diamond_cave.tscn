@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://cfr2lokrcrha0"]
+
+[ext_resource type="Script" uid="uid://c6supkurktic1" path="res://node_2d.gd" id="1_pp371"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pp371"]
+size = Vector2(996, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lh5ek"]
+size = Vector2(33, 912)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwxty"]
+size = Vector2(1663, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cfrt5"]
+size = Vector2(1659, 34)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_pp371")
+
+[node name="MapGrenzen" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="MapGrenzen"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapGrenzen/StaticBody2D"]
+position = Vector2(805.5, 6)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_pp371")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="MapGrenzen"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapGrenzen/StaticBody2D2"]
+position = Vector2(-807.5, 1)
+shape = SubResource("RectangleShape2D_lh5ek")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="MapGrenzen"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapGrenzen/StaticBody2D3"]
+position = Vector2(-8.5, 456.5)
+shape = SubResource("RectangleShape2D_xwxty")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="MapGrenzen"]
+position = Vector2(-910, 94)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MapGrenzen/StaticBody2D4"]
+position = Vector2(910.5, -552)
+shape = SubResource("RectangleShape2D_cfrt5")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]

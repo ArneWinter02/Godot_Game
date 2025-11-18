@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dfjklmvwpv61w" path="res://Scenes/main.gd" id="1_kry3j"]
 [ext_resource type="PackedScene" uid="uid://c0unbanf4wa0g" path="res://Scenes/player.tscn" id="2_ncryd"]
 [ext_resource type="Texture2D" uid="uid://cjg23leresqut" path="res://Bilder/Bilder/kugel.png" id="3_21xkr"]
-[ext_resource type="Script" uid="uid://dvgsgouk1wxd3" path="res://Scenes/player.gd" id="3_cg4he"]
+[ext_resource type="Script" uid="uid://cetwpmr7d6b2k" path="res://Scenes/player.gd" id="3_cg4he"]
 [ext_resource type="PackedScene" uid="uid://cpkt174sd56lj" path="res://Scenes/deko.tscn" id="3_ncryd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kry3j"]
