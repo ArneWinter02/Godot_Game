@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dojbwc8uotxea"
-path="res://.godot/imported/map_sprite_0.png-61acb891fac27d9e648591ac7ce3165a.ctex"
+uid="uid://cjg23leresqut"
+path="res://.godot/imported/kugel.png-1c92c0e226a4d1b0ffed3468b97bb7ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bilder/Bilder/map_sprite_0.png"
-dest_files=["res://.godot/imported/map_sprite_0.png-61acb891fac27d9e648591ac7ce3165a.ctex"]
+source_file="res://Bilder/Bilder/kugel.png"
+dest_files=["res://.godot/imported/kugel.png-1c92c0e226a4d1b0ffed3468b97bb7ac.ctex"]
 
 [params]
 

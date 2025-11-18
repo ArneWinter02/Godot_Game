@@ -1,24 +1,35 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+
+var direction: Vector2 = Vector2(1,1)
+var speed: int = 125
 
 
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+signal shoot(pos: Vector2, dir: Vector2) 
 
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+func get_input():
+	if Input.is_action_just_pressed("shoot") and $ReloadTimer.time_left == 0:
+		shoot.emit(position, get_local_mouse_position().normalized())
+		$ReloadTimer.start()
 
+
+
+func _physics_process(_delta: float) -> void:
+	direction = Input.get_vector("left", "right", "up", "down")
+	velocity = direction * speed
+	get_input()
+	animation()
 	move_and_slide()
+
+
+
+func animation():
+	if direction:
+		$AnimatedSprite2D.flip_h = direction.x > 0
+		if direction.x != 0:
+			$AnimatedSprite2D.animation = 'left'
+		else:
+			$AnimatedSprite2D.animation = 'up' if direction.y < 0 else 'down'
+	else:
+		$AnimatedSprite2D.frame = 0

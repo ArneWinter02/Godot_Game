@@ -1,10 +1,40 @@
 [gd_scene load_steps=20 format=3 uid="uid://c0unbanf4wa0g"]
 
 [ext_resource type="Texture2D" uid="uid://xvelvfyxlg0x" path="res://Bilder/Bilder/Sprite_sheet_unten.png" id="1_6gj28"]
-[ext_resource type="Script" uid="uid://cetwpmr7d6b2k" path="res://Scenes/player.gd" id="1_vgqql"]
 [ext_resource type="Texture2D" uid="uid://cicimbjm5uofw" path="res://Bilder/Bilder/sprite_sheet_Oben.png" id="2_6gj28"]
 [ext_resource type="Texture2D" uid="uid://c4d0tkwkip1g7" path="res://Bilder/Bilder/sprite_sheet_links.png" id="2_ik7gq"]
 [ext_resource type="Script" uid="uid://fhic1kyjyfs" path="res://Scenes/animated_sprite_2d.gd" id="5_fkybt"]
+
+[sub_resource type="GDScript" id="GDScript_vgqql"]
+script/source = "extends CharacterBody2D
+
+var direction: Vector2 = Vector2(1,1)
+var speed: int = 125
+
+signal shoot(pos: Vector2, dir: Vector2) 
+
+func get_input():
+	direction = Input.get_vector(\"left\", \"right\", \"up\", \"down\")
+	velocity = direction * speed
+	if Input.is_action_just_pressed(\"shoot\") and $ReloadTimer.time_left == 0:
+		shoot.emit(position, get_local_mouse_position().normalized())
+		$ReloadTimer.start()
+func _physics_process(_delta: float) -> void:
+	get_input()
+	animation()
+	move_and_slide()
+
+	
+func animation():
+	if direction:
+		$AnimatedSprite2D.flip_h = direction.x > 0
+		if direction.x != 0:
+			$AnimatedSprite2D.animation = 'left'
+		else:
+			$AnimatedSprite2D.animation = 'up' if direction.y < 0 else 'down'
+	else:
+		$AnimatedSprite2D.frame = 0
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ik7gq"]
 size = Vector2(5, 12.75)
@@ -112,7 +142,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_vgqql")
+script = SubResource("GDScript_vgqql")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
@@ -132,3 +162,7 @@ animation = &"down"
 autoplay = "left"
 frame_progress = 0.5997142
 script = ExtResource("5_fkybt")
+
+[node name="ReloadTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
