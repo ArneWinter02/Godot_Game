@@ -160,9 +160,10 @@ shape = SubResource("RectangleShape2D_ik7gq")
 sprite_frames = SubResource("SpriteFrames_5rgoc")
 animation = &"down"
 autoplay = "left"
-frame_progress = 0.5997142
 script = ExtResource("5_fkybt")
 
 [node name="ReloadTimer" type="Timer" parent="."]
 wait_time = 0.2
 one_shot = true
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
