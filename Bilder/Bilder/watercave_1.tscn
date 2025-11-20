@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://d3n3cmbyk85cr"]
+[gd_scene load_steps=9 format=3 uid="uid://pckrd8yiif53"]
 
-[ext_resource type="Texture2D" uid="uid://bnehunsf67eri" path="res://Bilder/Bilder/water.png" id="1_8ryl8"]
+[ext_resource type="Texture2D" uid="uid://cly36sgdlrlpv" path="res://Bilder/Bilder/water.png" id="1_8ryl8"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qc7qx"]
-load_path = "res://.godot/imported/water_background.png-42fd00d0a4c1158ea12935924552ed2d.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8ryl8"]
 texture = SubResource("CompressedTexture2D_qc7qx")
@@ -280,7 +279,6 @@ texture = ExtResource("1_8ryl8")
 texture = SubResource("CompressedTexture2D_qc7qx")
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tibm1"]
-load_path = "res://.godot/imported/New Piskel-1.png.png-7cd15d4a5acc0947c79be8c8528c6dee.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cb2qp"]
 texture = SubResource("CompressedTexture2D_tibm1")
