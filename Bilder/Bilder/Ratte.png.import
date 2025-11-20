@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cly36sgdlrlpv"
-path="res://.godot/imported/water.png-3394380981c9f7254429d61b15eddad8.ctex"
+uid="uid://st2apn33680q"
+path="res://.godot/imported/Ratte.png-ac0ba60e3cceabde53d2b58615fc94e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bilder/Bilder/water.png"
-dest_files=["res://.godot/imported/water.png-3394380981c9f7254429d61b15eddad8.ctex"]
+source_file="res://Bilder/Bilder/Ratte.png"
+dest_files=["res://.godot/imported/Ratte.png-ac0ba60e3cceabde53d2b58615fc94e5.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cly36sgdlrlpv" path="res://Bilder/Bilder/water.png" id="1_8ryl8"]
 [ext_resource type="Script" uid="uid://btlgqkhx4krbk" path="res://Scenes/watercave_1.gd" id="1_l0tdb"]
 [ext_resource type="PackedScene" uid="uid://c0unbanf4wa0g" path="res://Scenes/player.tscn" id="2_aj7ai"]
-[ext_resource type="Script" uid="uid://cetwpmr7d6b2k" path="res://Scenes/player.gd" id="3_l0tdb"]
+[ext_resource type="Script" uid="uid://dvgsgouk1wxd3" path="res://Scenes/player.gd" id="3_l0tdb"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qc7qx"]
 

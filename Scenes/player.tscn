@@ -1,8 +1,5 @@
 [gd_scene load_steps=20 format=3 uid="uid://c0unbanf4wa0g"]
 
-[ext_resource type="Texture2D" uid="uid://xvelvfyxlg0x" path="res://Bilder/Bilder/Sprite_sheet_unten.png" id="1_6gj28"]
-[ext_resource type="Texture2D" uid="uid://cicimbjm5uofw" path="res://Bilder/Bilder/sprite_sheet_Oben.png" id="2_6gj28"]
-[ext_resource type="Texture2D" uid="uid://c4d0tkwkip1g7" path="res://Bilder/Bilder/sprite_sheet_links.png" id="2_ik7gq"]
 [ext_resource type="Script" uid="uid://fhic1kyjyfs" path="res://Scenes/animated_sprite_2d.gd" id="5_fkybt"]
 
 [sub_resource type="GDScript" id="GDScript_vgqql"]
@@ -39,52 +36,61 @@ func animation():
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ik7gq"]
 size = Vector2(5, 12.75)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v0iea"]
+load_path = "res://.godot/imported/Sprite_sheet_unten.png-bda78cfdf057fc0c85bf5d3b936b330a.ctex"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_713bt"]
-atlas = ExtResource("1_6gj28")
+atlas = SubResource("CompressedTexture2D_v0iea")
 region = Rect2(0, 0, 16, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_syrg7"]
-atlas = ExtResource("1_6gj28")
+atlas = SubResource("CompressedTexture2D_v0iea")
 region = Rect2(16, 0, 16, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tttdv"]
-atlas = ExtResource("1_6gj28")
+atlas = SubResource("CompressedTexture2D_v0iea")
 region = Rect2(0, 17, 16, 17)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7katm"]
-atlas = ExtResource("1_6gj28")
+atlas = SubResource("CompressedTexture2D_v0iea")
 region = Rect2(16, 17, 16, 17)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cvnsp"]
+load_path = "res://.godot/imported/sprite_sheet_links.png-df68a4c8de0a2115efd225b26c5b6aa6.ctex"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_y5r6g"]
-atlas = ExtResource("2_ik7gq")
+atlas = SubResource("CompressedTexture2D_cvnsp")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7i8ty"]
-atlas = ExtResource("2_ik7gq")
+atlas = SubResource("CompressedTexture2D_cvnsp")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lh73p"]
-atlas = ExtResource("2_ik7gq")
+atlas = SubResource("CompressedTexture2D_cvnsp")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5a1a8"]
-atlas = ExtResource("2_ik7gq")
+atlas = SubResource("CompressedTexture2D_cvnsp")
 region = Rect2(16, 16, 16, 16)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6t5aa"]
+load_path = "res://.godot/imported/sprite_sheet_Oben.png-7437c5d1e85ab3a3b350e719eb1cbe87.ctex"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_5rgoc"]
-atlas = ExtResource("2_6gj28")
+atlas = SubResource("CompressedTexture2D_6t5aa")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b7gg5"]
-atlas = ExtResource("2_6gj28")
+atlas = SubResource("CompressedTexture2D_6t5aa")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kav11"]
-atlas = ExtResource("2_6gj28")
+atlas = SubResource("CompressedTexture2D_6t5aa")
 region = Rect2(0, 16, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1weop"]
-atlas = ExtResource("2_6gj28")
+atlas = SubResource("CompressedTexture2D_6t5aa")
 region = Rect2(16, 16, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5rgoc"]
@@ -159,11 +165,8 @@ shape = SubResource("RectangleShape2D_ik7gq")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_5rgoc")
 animation = &"down"
-autoplay = "left"
 script = ExtResource("5_fkybt")
 
 [node name="ReloadTimer" type="Timer" parent="."]
 wait_time = 0.2
 one_shot = true
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]

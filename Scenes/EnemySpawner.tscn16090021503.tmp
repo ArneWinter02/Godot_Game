@@ -57,7 +57,7 @@ shape = SubResource("RectangleShape2D_u7cdh")
 position = Vector2(-4, -6)
 sprite_frames = SubResource("SpriteFrames_4b1db")
 animation = &"Left"
-frame_progress = 0.7512405
+frame_progress = 0.1325116
 script = ExtResource("2_v2i37")
 
 [node name="Detection Area" type="Area2D" parent="."]
