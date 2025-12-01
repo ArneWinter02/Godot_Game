@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bbhkkogcgl6xi"
-path="res://.godot/imported/monster.png-b71d71188b366f52efaf5d846e2d38df.ctex"
+uid="uid://bgpglqo4a5l7j"
+path="res://.godot/imported/deko.png-af4d7d862957eccff3a45d42e02f5ca0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Dandan/图片材料/monster.png"
-dest_files=["res://.godot/imported/monster.png-b71d71188b366f52efaf5d846e2d38df.ctex"]
+source_file="res://Dandan/Fotos/deko.png"
+dest_files=["res://.godot/imported/deko.png-af4d7d862957eccff3a45d42e02f5ca0.ctex"]
 
 [params]
 

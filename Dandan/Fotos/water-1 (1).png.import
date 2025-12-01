@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://il0ytdi7txu5"
-path="res://.godot/imported/monster-2.png-c974c2a15522a7f872a09da533673709.ctex"
+uid="uid://bpaoblqv1f784"
+path="res://.godot/imported/water-1 (1).png-965021959fe8a78baf72a6dd9f027170.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Dandan/图片材料/monster-2.png"
-dest_files=["res://.godot/imported/monster-2.png-c974c2a15522a7f872a09da533673709.ctex"]
+source_file="res://Dandan/Fotos/water-1 (1).png"
+dest_files=["res://.godot/imported/water-1 (1).png-965021959fe8a78baf72a6dd9f027170.ctex"]
 
 [params]
 
