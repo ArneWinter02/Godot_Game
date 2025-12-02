@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://7e1sric3t8wb"]
+[gd_scene load_steps=21 format=4 uid="uid://7e1sric3t8wb"]
 
 [ext_resource type="Texture2D" uid="uid://cb8ja4tvkm2uy" path="res://Dandan/图片材料/Boden.png" id="1_v1wn3"]
 [ext_resource type="Texture2D" uid="uid://bph42tfvrn1v5" path="res://Dandan/图片材料/water-1.png" id="2_f0e3r"]
@@ -6,8 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bujjng345bvmv" path="res://Dandan/图片材料/Boden-2.png" id="4_bekte"]
 [ext_resource type="Texture2D" uid="uid://bgpglqo4a5l7j" path="res://Dandan/图片材料/deko.png" id="5_l1x7s"]
 [ext_resource type="PackedScene" uid="uid://c0unbanf4wa0g" path="res://Scenes/player.tscn" id="7_f0e3r"]
-[ext_resource type="PackedScene" path="res://Dandan/scene/enemy.tscn" id="7_jdgef"]
-[ext_resource type="PackedScene" uid="uid://din06b88rnqd5" path="res://Scenes/UserInterface/ui.tscn" id="8_jdgef"]
+[ext_resource type="PackedScene" uid="uid://dpvw7448rmuqh" path="res://Dandan/scene/enemy.tscn" id="7_jdgef"]
+[ext_resource type="PackedScene" uid="uid://b5kakulprxmw2" path="res://Scenes/UserInterface/ui.tscn" id="8_jdgef"]
+[ext_resource type="PackedScene" uid="uid://dudiy46djf3r6" path="res://Dandan/scene/dragon.tscn" id="9_bekte"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5rpkb"]
 texture = ExtResource("1_v1wn3")
@@ -455,5 +456,10 @@ collision_layer = 3
 
 [node name="敌人" parent="." instance=ExtResource("7_jdgef")]
 position = Vector2(469, 285)
+collision_layer = 3
 
 [node name="UI" parent="." instance=ExtResource("8_jdgef")]
+
+[node name="dragon" parent="." instance=ExtResource("9_bekte")]
+position = Vector2(821, 229)
+collision_layer = 3

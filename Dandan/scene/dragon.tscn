@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dudiy46djf3r6"]
+[gd_scene load_steps=16 format=3 uid="uid://dudiy46djf3r6"]
 
 [ext_resource type="Texture2D" uid="uid://bbhkkogcgl6xi" path="res://Dandan/图片材料/monster.png" id="1_f50pn"]
 [ext_resource type="Script" uid="uid://dpi72rl2y4tsl" path="res://Dandan/script/dragon.gd" id="1_gd05a"]
@@ -86,6 +86,12 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_f50pn"]
 radius = 5.0990195
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_btese"]
+radius = 8.062258
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_272mo"]
+radius = 33.24154
+
 [node name="dragon" type="CharacterBody2D"]
 y_sort_enabled = true
 position = Vector2(-1, 0)
@@ -101,9 +107,20 @@ animation = &"rightwalk"
 position = Vector2(-2, 4)
 shape = SubResource("CircleShape2D_f50pn")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(4, 4)
-limit_left = 9
-limit_top = 40
-limit_right = 1201
-limit_bottom = 586
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+position = Vector2(-2, 1)
+shape = SubResource("CircleShape2D_btese")
+disabled = true
+
+[node name="detection_area" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detection_area"]
+position = Vector2(-2, 3)
+shape = SubResource("CircleShape2D_272mo")
+
+[connection signal="body_entered" from="detection_area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="detection_area" to="." method="_on_detection_area_body_exited"]
