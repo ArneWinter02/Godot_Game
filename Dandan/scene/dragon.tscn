@@ -1,8 +1,8 @@
 [gd_scene load_steps=14 format=3 uid="uid://dudiy46djf3r6"]
 
-[ext_resource type="Texture2D" uid="uid://bbhkkogcgl6xi" path="res://图片材料/monster.png" id="1_f50pn"]
-[ext_resource type="Script" uid="uid://dpi72rl2y4tsl" path="res://script/dragon.gd" id="1_gd05a"]
-[ext_resource type="Texture2D" uid="uid://il0ytdi7txu5" path="res://图片材料/monster-2.png" id="2_86iwx"]
+[ext_resource type="Texture2D" uid="uid://bbhkkogcgl6xi" path="res://Dandan/图片材料/monster.png" id="1_f50pn"]
+[ext_resource type="Script" uid="uid://dpi72rl2y4tsl" path="res://Dandan/script/dragon.gd" id="1_gd05a"]
+[ext_resource type="Texture2D" uid="uid://il0ytdi7txu5" path="res://Dandan/图片材料/monster-2.png" id="2_86iwx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_318mt"]
 atlas = ExtResource("2_86iwx")
