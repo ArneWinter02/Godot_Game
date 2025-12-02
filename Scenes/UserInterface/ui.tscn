@@ -1,3 +1,7 @@
+<<<<<<< Updated upstream
 [gd_scene format=3 uid="uid://b5kakulprxmw2"]
+=======
+[gd_scene format=3 uid="uid://din06b88rnqd5"]
+>>>>>>> Stashed changes
 
 [node name="UI" type="CanvasLayer"]

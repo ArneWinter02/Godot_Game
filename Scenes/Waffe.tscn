@@ -1,7 +1,14 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=3 format=3 uid="uid://o7qc7uhlib0y"]
 
 [ext_resource type="Texture2D" uid="uid://mk5gstxah2s8" path="res://Bilder/Bilder/Jagdgewehr.png" id="1_fgwse"]
 [ext_resource type="Script" uid="uid://ddg3bqm61rfuw" path="res://Scenes/ShallowScenes/waffe.gd" id="1_n1sfj"]
+=======
+[gd_scene load_steps=3 format=3 uid="uid://b46bd5ig32u7w"]
+
+[ext_resource type="Texture2D" path="res://Bilder/Bilder/Jagdgewehr.png" id="1_fgwse"]
+[ext_resource type="Script" path="res://Scenes/ShallowScenes/waffe.gd" id="1_n1sfj"]
+>>>>>>> Stashed changes
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_n1sfj")
