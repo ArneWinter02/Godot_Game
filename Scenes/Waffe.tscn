@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://o7qc7uhlib0y"]
+
+[ext_resource type="Texture2D" uid="uid://mk5gstxah2s8" path="res://Bilder/Bilder/Jagdgewehr.png" id="1_fgwse"]
+[ext_resource type="Script" uid="uid://ddg3bqm61rfuw" path="res://Scenes/ShallowScenes/waffe.gd" id="1_n1sfj"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_n1sfj")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(5.3, 0)
+gizmo_extents = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-5.9604645e-08, -1.7763568e-15)
+scale = Vector2(0.3888889, 0.26562497)
+texture = ExtResource("1_fgwse")
+region_enabled = true
+region_rect = Rect2(64, 49, 27, 11)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0

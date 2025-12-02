@@ -1,3 +1,6 @@
-extends Sprite2D
+extends CharacterBody2D
 
-@export var stats: Stats
+#func damage(attack: Attack):
+	#health -= attack_damage
+	#if health <=0:
+	#	queue_free()

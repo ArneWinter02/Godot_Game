@@ -1,11 +1,11 @@
-[gd_scene load_steps=15 format=4 uid="uid://b0edelq78t3rx"]
+[gd_scene load_steps=14 format=4 uid="uid://b0edelq78t3rx"]
 
 [ext_resource type="Texture2D" uid="uid://bjmnikyt888tl" path="res://Bilder/Bilder/Tileset_map.png" id="1_jjvhh"]
 [ext_resource type="Script" uid="uid://dfjklmvwpv61w" path="res://Scenes/main.gd" id="1_kry3j"]
 [ext_resource type="PackedScene" uid="uid://c0unbanf4wa0g" path="res://Scenes/player.tscn" id="2_ncryd"]
+[ext_resource type="Texture2D" uid="uid://cjg23leresqut" path="res://Bilder/Bilder/kugel.png" id="3_21xkr"]
 [ext_resource type="Script" uid="uid://dvgsgouk1wxd3" path="res://Scenes/player.gd" id="3_cg4he"]
 [ext_resource type="PackedScene" uid="uid://cpkt174sd56lj" path="res://Scenes/deko.tscn" id="3_ncryd"]
-[ext_resource type="PackedScene" uid="uid://cx5h32uy8dv4j" path="res://Scenes/EnemySpawner.tscn" id="6_6bp64"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kry3j"]
 texture = ExtResource("1_jjvhh")
@@ -16,11 +16,8 @@ texture = ExtResource("1_jjvhh")
 3:1/0 = 0
 2:2/0 = 0
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_21xkr"]
-load_path = "res://.godot/imported/kugel.png-1c92c0e226a4d1b0ffed3468b97bb7ac.ctex"
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6bp64"]
-texture = SubResource("CompressedTexture2D_21xkr")
+texture = ExtResource("3_21xkr")
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_jjvhh"]
@@ -54,9 +51,6 @@ metadata/_edit_lock_ = true
 [node name="Player" parent="Enteties" instance=ExtResource("2_ncryd")]
 scale = Vector2(2, 2)
 script = ExtResource("3_cg4he")
-
-[node name="Enemy_Ratte" parent="Enteties" instance=ExtResource("6_6bp64")]
-position = Vector2(374, -208)
 
 [node name="Bullets" type="Node2D" parent="."]
 
@@ -94,7 +88,7 @@ metadata/_edit_lock_ = true
 position = Vector2(-910, 94)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapGrenzen/StaticBody2D4"]
-position = Vector2(921, -560)
+position = Vector2(921, -568)
 shape = SubResource("RectangleShape2D_ufuoh")
 metadata/_edit_lock_ = true
 
