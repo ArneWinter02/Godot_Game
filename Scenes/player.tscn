@@ -79,10 +79,6 @@ script = SubResource("GDScript_vgqql")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ik7gq")
 
-[node name="ReloadTimer" type="Timer" parent="."]
-wait_time = 3.0
-one_shot = true
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)
 scale = Vector2(0.3125, 0.3125)
