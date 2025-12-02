@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=19 format=4 uid="uid://c2ejewwrg4cn7"]
 
 [ext_resource type="Texture2D" uid="uid://dxskal3g8oyov" path="res://Dandan/Fotos/Boden.png" id="1_v1wn3"]
@@ -6,6 +7,16 @@
 [ext_resource type="Texture2D" uid="uid://dkmcs2pjpxxyq" path="res://Dandan/Fotos/Boden-2.png" id="4_bekte"]
 [ext_resource type="Texture2D" uid="uid://bgpglqo4a5l7j" path="res://Dandan/Fotos/deko.png" id="5_l1x7s"]
 [ext_resource type="PackedScene" uid="uid://tvydmmks452y" path="res://Dandan/scene/dragon.tscn" id="6_hkhh7"]
+=======
+[gd_scene load_steps=19 format=4 uid="uid://cdtqpac8wrkdt"]
+
+[ext_resource type="Texture2D" path="res://Dandan/Fotos/Boden.png" id="1_v1wn3"]
+[ext_resource type="Texture2D" path="res://Dandan/Fotos/water-1.png" id="2_f0e3r"]
+[ext_resource type="Texture2D" path="res://Dandan/Fotos/water-1 (1).png" id="3_jdgef"]
+[ext_resource type="Texture2D" path="res://Dandan/Fotos/Boden-2.png" id="4_bekte"]
+[ext_resource type="Texture2D" path="res://Dandan/Fotos/deko.png" id="5_l1x7s"]
+[ext_resource type="PackedScene" path="res://Dandan/scene/dragon.tscn" id="6_hkhh7"]
+>>>>>>> Stashed changes
 [ext_resource type="PackedScene" path="res://Dandan/scene/enemy.tscn" id="7_f0e3r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5rpkb"]

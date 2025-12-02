@@ -1,7 +1,14 @@
+<<<<<<< Updated upstream
 [gd_scene load_steps=19 format=3 uid="uid://tvydmmks452y"]
 
 [ext_resource type="Script" path="res://Dandan/script/dragon.gd" id="1_gd05a"]
 [ext_resource type="Texture2D" uid="uid://gh5b83uahga7" path="res://Dandan/Fotos/Jagdgewehr-1.png.png" id="2_qm0q0"]
+=======
+[gd_scene load_steps=19 format=3 uid="uid://com2gg3pyp8j0"]
+
+[ext_resource type="Script" path="res://Dandan/script/dragon.gd" id="1_gd05a"]
+[ext_resource type="Texture2D" path="res://Dandan/Fotos/Jagdgewehr-1.png.png" id="2_qm0q0"]
+>>>>>>> Stashed changes
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_btese"]
 atlas = ExtResource("2_qm0q0")
