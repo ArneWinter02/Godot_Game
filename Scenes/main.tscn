@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://c0unbanf4wa0g" path="res://Scenes/player.tscn" id="2_ncryd"]
 [ext_resource type="Script" uid="uid://dvgsgouk1wxd3" path="res://Scenes/player.gd" id="3_cg4he"]
 [ext_resource type="PackedScene" uid="uid://cpkt174sd56lj" path="res://Scenes/deko.tscn" id="3_ncryd"]
+[ext_resource type="PackedScene" uid="uid://b5kakulprxmw2" path="res://Scenes/UserInterface/ui.tscn" id="7_6bp64"]
+[ext_resource type="PackedScene" uid="uid://cuaswsq4wnby0" path="res://Dandan/scene/enemy.tscn" id="7_344ge"]
 [ext_resource type="PackedScene" uid="uid://din06b88rnqd5" path="res://Scenes/UserInterface/ui.tscn" id="7_6bp64"]
 [ext_resource type="PackedScene" uid="uid://dpvw7448rmuqh" path="res://Dandan/scene/enemy.tscn" id="7_344ge"]
 
@@ -100,6 +102,7 @@ metadata/_edit_lock_ = true
 [node name="UI" parent="." instance=ExtResource("7_6bp64")]
 
 [node name="敌人" parent="." instance=ExtResource("7_344ge")]
+position = Vector2(256, -122)
 position = Vector2(175, -20)
 
 [connection signal="shoot" from="Enteties/Player" to="." method="_on_player_shoot"]

@@ -80,7 +80,7 @@ script = SubResource("GDScript_vgqql")
 shape = SubResource("RectangleShape2D_ik7gq")
 
 [node name="ReloadTimer" type="Timer" parent="."]
-wait_time = 0.2
+wait_time = 3.0
 one_shot = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
