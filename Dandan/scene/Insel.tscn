@@ -1,11 +1,12 @@
-[gd_scene load_steps=18 format=4 uid="uid://duqonrhu4tkom"]
+[gd_scene load_steps=19 format=4 uid="uid://7e1sric3t8wb"]
 
 [ext_resource type="Texture2D" uid="uid://dxskal3g8oyov" path="res://Dandan/图片材料/Boden.png" id="1_v1wn3"]
 [ext_resource type="Texture2D" uid="uid://bph42tfvrn1v5" path="res://Dandan/图片材料/water-1.png" id="2_f0e3r"]
 [ext_resource type="Texture2D" uid="uid://bpaoblqv1f784" path="res://Dandan/图片材料/water-1 (1).png" id="3_jdgef"]
 [ext_resource type="Texture2D" uid="uid://dkmcs2pjpxxyq" path="res://Dandan/图片材料/Boden-2.png" id="4_bekte"]
 [ext_resource type="Texture2D" uid="uid://bgpglqo4a5l7j" path="res://Dandan/图片材料/deko.png" id="5_l1x7s"]
-[ext_resource type="PackedScene" uid="uid://dudiy46djf3r6" path="res://Dandan/scene/dragon.tscn" id="6_hkhh7"]
+[ext_resource type="PackedScene" path="res://Dandan/scene/dragon.tscn" id="6_hkhh7"]
+[ext_resource type="PackedScene" uid="uid://c0unbanf4wa0g" path="res://Scenes/player.tscn" id="7_f0e3r"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5rpkb"]
 texture = ExtResource("1_v1wn3")
@@ -447,6 +448,10 @@ tile_set = SubResource("TileSet_0c8w7")
 tile_map_data = PackedByteArray("AAALAAYAAAAAAAAAAAAOAAYAAAAAAAAAAAATAAQAAAAAAAAAAAATAAcAAAAAAAAAAAASAAwAAAAAAAAAAAAXAAoAAAAAAAAAAAANAA0AAAAAAAAAAAAKAA4AAAAAAAAAAAAJAAwAAAAAAAAAAAAbAAcAAAAAAAAAAAAXAAYAAAAAAAAAAAAIAA4AAAAAAAAAAAAFAAwAAAAAAAAAAAAIAAgAAAAAAAAAAAAHAAUAAAAAAAAAAAAPAA4AAAAAAAAAAAAQAAkAAAAAAAAAAAAXAAMAAAAAAAAAAAAYAAMAAAAAAAAAAAAZAA0AAAAAAAAAAAAbAAwAAAAAAAAAAAAdAAkAAAAAAAAAAAAgAAcAAAAAAAAAAAATAA4AAAAAAAAAAAALAAsAAAACAAEAAAANAAgAAAACAAEAAAAIAAYAAAACAAEAAAAMAAUAAAACAAEAAAARAAsAAAACAAEAAAAWAAsAAAACAAEAAAAPABAAAAACAAEAABANAA8AAAACAAEAABAJAA0AAAACAAEAAAAGAA4AAAACAAEAAAAGAAwAAAACAAEAAAAEAAwAAAACAAEAAAAFAAsAAAABAAEAAAAKAA8AAAABAAEAAAARAAcAAAABAAEAAAASAAcAAAABAAEAABAYAAsAAAABAAEAABAdAAsAAAABAAEAABAcAAgAAAABAAEAABAXAA4AAAAAAAEAAAAWAAwAAAAAAAEAAAAQAAoAAAAAAAEAAAAOABAAAAAAAAEAAAAPAAYAAAAAAAEAAAATAAUAAAAAAAEAAAAVAAMAAAAAAAEAAAA=")
 tile_set = SubResource("TileSet_ylmam")
 
+[node name="Player" parent="." instance=ExtResource("7_f0e3r")]
+position = Vector2(175, 244)
+
 [node name="dragon" parent="." instance=ExtResource("6_hkhh7")]
 y_sort_enabled = false
-position = Vector2(175, 244)
+position = Vector2(206, 244)
+script = null

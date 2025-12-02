@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://b0edelq78t3rx"]
+[gd_scene load_steps=16 format=4 uid="uid://b0edelq78t3rx"]
 
 [ext_resource type="Texture2D" uid="uid://bjmnikyt888tl" path="res://Bilder/Bilder/Tileset_map.png" id="1_jjvhh"]
 [ext_resource type="Script" uid="uid://dfjklmvwpv61w" path="res://Scenes/main.gd" id="1_kry3j"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dvgsgouk1wxd3" path="res://Scenes/player.gd" id="3_cg4he"]
 [ext_resource type="PackedScene" uid="uid://cpkt174sd56lj" path="res://Scenes/deko.tscn" id="3_ncryd"]
 [ext_resource type="PackedScene" uid="uid://cx5h32uy8dv4j" path="res://Scenes/EnemySpawner.tscn" id="6_6bp64"]
+[ext_resource type="PackedScene" uid="uid://b5kakulprxmw2" path="res://Scenes/UserInterface/ui.tscn" id="7_6bp64"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kry3j"]
 texture = ExtResource("1_jjvhh")
@@ -97,5 +98,7 @@ position = Vector2(-910, 94)
 position = Vector2(921, -560)
 shape = SubResource("RectangleShape2D_ufuoh")
 metadata/_edit_lock_ = true
+
+[node name="UI" parent="." instance=ExtResource("7_6bp64")]
 
 [connection signal="shoot" from="Enteties/Player" to="." method="_on_player_shoot"]
