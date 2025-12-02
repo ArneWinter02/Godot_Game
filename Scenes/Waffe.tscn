@@ -20,3 +20,4 @@ region_rect = Rect2(64, 49, 27, 11)
 [node name="Reload" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+autostart = true
