@@ -26,8 +26,8 @@ func play_anim(dir):
 		if dir.x == 1:
 			$AnimatedSprite2D.play("rightwalk")
 		if dir.y == 1:
-			$AnimatedSprite2D.play("idle")
+			$AnimatedSprite2D.play("leftwalk")
 		if dir.x == -1:
-			$AnimatedSprite2D.play("idle")
+			$AnimatedSprite2D.play("leftwalk")
 			
 	
