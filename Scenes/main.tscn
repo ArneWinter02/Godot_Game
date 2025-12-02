@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://c0unbanf4wa0g" path="res://Scenes/player.tscn" id="2_ncryd"]
 [ext_resource type="Script" uid="uid://dvgsgouk1wxd3" path="res://Scenes/player.gd" id="3_cg4he"]
 [ext_resource type="PackedScene" uid="uid://cpkt174sd56lj" path="res://Scenes/deko.tscn" id="3_ncryd"]
-[ext_resource type="PackedScene" uid="uid://cx5h32uy8dv4j" path="res://Scenes/EnemySpawner.tscn" id="6_6bp64"]
-[ext_resource type="PackedScene" uid="uid://b5kakulprxmw2" path="res://Scenes/UserInterface/ui.tscn" id="7_6bp64"]
+[ext_resource type="PackedScene" uid="uid://din06b88rnqd5" path="res://Scenes/UserInterface/ui.tscn" id="7_6bp64"]
+[ext_resource type="PackedScene" uid="uid://dpvw7448rmuqh" path="res://Dandan/scene/enemy.tscn" id="7_344ge"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kry3j"]
 texture = ExtResource("1_jjvhh")
@@ -54,10 +54,8 @@ metadata/_edit_lock_ = true
 
 [node name="Player" parent="Enteties" instance=ExtResource("2_ncryd")]
 scale = Vector2(2, 2)
+collision_layer = 3
 script = ExtResource("3_cg4he")
-
-[node name="Enemy_Ratte" parent="Enteties" instance=ExtResource("6_6bp64")]
-position = Vector2(374, -208)
 
 [node name="Bullets" type="Node2D" parent="."]
 
@@ -100,5 +98,8 @@ shape = SubResource("RectangleShape2D_ufuoh")
 metadata/_edit_lock_ = true
 
 [node name="UI" parent="." instance=ExtResource("7_6bp64")]
+
+[node name="敌人" parent="." instance=ExtResource("7_344ge")]
+position = Vector2(175, -20)
 
 [connection signal="shoot" from="Enteties/Player" to="." method="_on_player_shoot"]
