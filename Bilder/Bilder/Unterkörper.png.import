@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xvelvfyxlg0x"
-path="res://.godot/imported/Sprite_sheet_unten.png-bda78cfdf057fc0c85bf5d3b936b330a.ctex"
+uid="uid://b283n2iepwb3f"
+path="res://.godot/imported/Unterkörper.png-2fa47ec72fab32913bcb7600f107fe9e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bilder/Bilder/Sprite_sheet_unten.png"
-dest_files=["res://.godot/imported/Sprite_sheet_unten.png-bda78cfdf057fc0c85bf5d3b936b330a.ctex"]
+source_file="res://Bilder/Bilder/Unterkörper.png"
+dest_files=["res://.godot/imported/Unterkörper.png-2fa47ec72fab32913bcb7600f107fe9e.ctex"]
 
 [params]
 

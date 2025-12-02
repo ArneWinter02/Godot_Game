@@ -47,8 +47,6 @@ animations = [{
 radius = 645.0194
 
 [node name="Enemy_Ratte" type="CharacterBody2D"]
-collision_layer = 4
-collision_mask = 11
 script = ExtResource("1_db84r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -59,7 +57,7 @@ shape = SubResource("RectangleShape2D_u7cdh")
 position = Vector2(-4, -6)
 sprite_frames = SubResource("SpriteFrames_4b1db")
 animation = &"Left"
-frame_progress = 0.7062947
+frame_progress = 0.1325116
 script = ExtResource("2_v2i37")
 
 [node name="Detection Area" type="Area2D" parent="."]

@@ -5,7 +5,7 @@ var direction: Vector2 = Vector2(1,1)
 var speed: int = 125
 
 
-signal shoot(pos: Vector2, dir: Vector2) 
+signal shoot(_pos: Vector2, dir: Vector2) 
 
 
 func get_input():
@@ -26,10 +26,9 @@ func _physics_process(_delta: float) -> void:
 
 func animation():
 	if direction:
-		$AnimatedSprite2D.flip_h = direction.x > 0
-		if direction.x != 0:
-			$AnimatedSprite2D.animation = 'left'
-		else:
-			$AnimatedSprite2D.animation = 'up' if direction.y < 0 else 'down'
-	else:
-		$AnimatedSprite2D.frame = 0
+		$AnimatedSprite2D.flip_h = direction.x < 0
+	elif direction.x != 0: 
+		$AnimatedSprite2D.animation = 'default'
+	elif direction.y > 0:
+		$AnimatedSprite2D.flip_h
+	$AnimatedSprite2D.frame = 0

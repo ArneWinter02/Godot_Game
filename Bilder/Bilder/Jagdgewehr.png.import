@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://di0e4xnpjlske"
-path="res://.godot/imported/kugel.png-1c92c0e226a4d1b0ffed3468b97bb7ac.ctex"
+uid="uid://mk5gstxah2s8"
+path="res://.godot/imported/Jagdgewehr.png-0c70511df1c71bb70ae409d855349b98.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bilder/Bilder/kugel.png"
-dest_files=["res://.godot/imported/kugel.png-1c92c0e226a4d1b0ffed3468b97bb7ac.ctex"]
+source_file="res://Bilder/Bilder/Jagdgewehr.png"
+dest_files=["res://.godot/imported/Jagdgewehr.png-0c70511df1c71bb70ae409d855349b98.ctex"]
 
 [params]
 
