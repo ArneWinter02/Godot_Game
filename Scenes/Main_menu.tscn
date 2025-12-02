@@ -1,13 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhfyt0f84urdw"]
+[gd_scene load_steps=6 format=3 uid="uid://bhfyt0f84urdw"]
 
 [ext_resource type="Texture2D" uid="uid://bbwryyyd0vusv" path="res://Bilder/Bilder/MenuHintergrund.png" id="1_7sp8y"]
 [ext_resource type="Texture2D" uid="uid://cuadvu6ndsw4x" path="res://Bilder/Bilder/User_Interface.png" id="2_pc006"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_pc006"]
-paragraph_spacing = -10.0
-font_size = 20
-outline_size = 2
-outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f7j37"]
 texture = ExtResource("2_pc006")
@@ -52,9 +46,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -162.0
-offset_top = -182.5
-offset_right = 158.0
+offset_left = -468.0
+offset_top = -135.0
+offset_right = 473.0
 offset_bottom = 182.5
 grow_horizontal = 2
 grow_vertical = 2
@@ -63,23 +57,8 @@ grow_vertical = 2
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="MenuBox" type="NinePatchRect" parent="MenuSkelett/MenuContainer"]
-custom_minimum_size = Vector2(25, 75)
-layout_mode = 2
-texture = ExtResource("2_pc006")
-region_rect = Rect2(66, 226, 102, 24)
-
-[node name="MenuText" type="Label" parent="MenuSkelett/MenuContainer/MenuBox"]
-layout_mode = 0
-offset_right = 320.0
-offset_bottom = 75.5
-text = "
-                   MAIN MENU"
-label_settings = SubResource("LabelSettings_pc006")
-structured_text_bidi_override_options = [null]
-
 [node name="PlayButton" type="Button" parent="MenuSkelett/MenuContainer"]
-custom_minimum_size = Vector2(100, 50)
+custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -88,8 +67,9 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_pc006")
 theme_override_styles/hover = SubResource("StyleBoxTexture_pc006")
 
 [node name="Label" type="Label" parent="MenuSkelett/MenuContainer/PlayButton"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 0
-offset_right = 100.0
+offset_right = 195.0
 offset_bottom = 50.5
 text = "START"
 label_settings = SubResource("LabelSettings_f7j37")
@@ -97,7 +77,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PlayButton2" type="Button" parent="MenuSkelett/MenuContainer"]
-custom_minimum_size = Vector2(100, 50)
+custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -106,6 +86,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_pc006")
 theme_override_styles/hover = SubResource("StyleBoxTexture_pc006")
 
 [node name="Label" type="Label" parent="MenuSkelett/MenuContainer/PlayButton2"]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 0
 offset_top = 1.5
 offset_right = 100.0
@@ -116,7 +97,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PlayButton3" type="Button" parent="MenuSkelett/MenuContainer"]
-custom_minimum_size = Vector2(100, 50)
+custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -126,7 +107,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_pc006")
 
 [node name="Label" type="Label" parent="MenuSkelett/MenuContainer/PlayButton3"]
 layout_mode = 0
-offset_right = 100.0
+offset_right = 150.0
 offset_bottom = 50.5
 text = "SETTINGS"
 label_settings = SubResource("LabelSettings_f7j37")
@@ -134,7 +115,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PlayButton4" type="Button" parent="MenuSkelett/MenuContainer"]
-custom_minimum_size = Vector2(100, 50)
+custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -144,7 +125,7 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_pc006")
 
 [node name="Label" type="Label" parent="MenuSkelett/MenuContainer/PlayButton4"]
 layout_mode = 0
-offset_right = 100.0
+offset_right = 150.0
 offset_bottom = 50.5
 text = "QUIT"
 label_settings = SubResource("LabelSettings_f7j37")

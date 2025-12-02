@@ -54,7 +54,7 @@ scale = Vector2(2, 2)
 script = ExtResource("3_cg4he")
 
 [node name="Enemy_Ratte" parent="Enteties" instance=ExtResource("6_6bp64")]
-position = Vector2(90, -27)
+position = Vector2(99, -32)
 
 [node name="Bullets" type="Node2D" parent="."]
 
