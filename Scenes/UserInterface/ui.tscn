@@ -1,3 +1,81 @@
-[gd_scene format=3 uid="uid://b5kakulprxmw2"]
+[gd_scene load_steps=5 format=3 uid="uid://b5kakulprxmw2"]
+
+[ext_resource type="Texture2D" uid="uid://b4btvl7csapwo" path="res://Bilder/UserInterface/Magazine_UI.png" id="1_l84sa"]
+[ext_resource type="Texture2D" uid="uid://k0dp5iskdec" path="res://Bilder/UserInterface/Health_Bar.png" id="2_6ehn7"]
+[ext_resource type="Texture2D" uid="uid://c0lq8ocp4bidc" path="res://Bilder/UserInterface/Herzen_UI.png" id="4_tpagg"]
+
+[sub_resource type="Theme" id="Theme_cuiue"]
 
 [node name="UI" type="CanvasLayer"]
+
+[node name="Munition" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 638.0
+offset_right = -1190.5
+offset_bottom = -40.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Munition"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 19.0
+offset_top = 1.0
+offset_right = 19.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Munition/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_stretch_ratio = 0.0
+theme = SubResource("Theme_cuiue")
+text = "5/5"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Munition/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+texture = ExtResource("1_l84sa")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Leben" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 14.0
+offset_right = 232.0
+offset_bottom = 44.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Leben"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ProgressBar" type="TextureProgressBar" parent="Leben"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_right = -144.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+max_value = 60.0
+value = 60.0
+texture_under = ExtResource("2_6ehn7")
+texture_progress = ExtResource("4_tpagg")
