@@ -14,6 +14,10 @@ config/name="Scuba Diver"
 run/main_scene="uid://b0edelq78t3rx"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
+[autoload]
+
+Global="*res://Scripts/Stats für Spieler und Gegner/Global.gd"
+
 [display]
 
 window/size/viewport_width=1280

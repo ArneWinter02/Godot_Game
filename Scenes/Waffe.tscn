@@ -17,5 +17,6 @@ texture = ExtResource("1_fgwse")
 region_enabled = true
 region_rect = Rect2(64, 49, 27, 11)
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Reload" type="Timer" parent="."]
 wait_time = 2.0
+one_shot = true
