@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://bujjng345bvmv" path="res://Dandan/图片材料/Boden-2.png" id="4_bekte"]
 [ext_resource type="Texture2D" uid="uid://bgpglqo4a5l7j" path="res://Dandan/图片材料/deko.png" id="5_l1x7s"]
 [ext_resource type="PackedScene" uid="uid://c0unbanf4wa0g" path="res://Scenes/player.tscn" id="7_f0e3r"]
-[ext_resource type="PackedScene" path="res://Dandan/scene/enemy.tscn" id="7_jdgef"]
-[ext_resource type="PackedScene" uid="uid://din06b88rnqd5" path="res://Scenes/UserInterface/ui.tscn" id="8_jdgef"]
+[ext_resource type="PackedScene" uid="uid://dpvw7448rmuqh" path="res://Dandan/scene/enemy.tscn" id="7_jdgef"]
+[ext_resource type="PackedScene" uid="uid://b5kakulprxmw2" path="res://Scenes/UserInterface/ui.tscn" id="8_jdgef"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5rpkb"]
 texture = ExtResource("1_v1wn3")
@@ -450,7 +450,7 @@ tile_map_data = PackedByteArray("AAALAAYAAAAAAAAAAAAOAAYAAAAAAAAAAAATAAQAAAAAAAA
 tile_set = SubResource("TileSet_ylmam")
 
 [node name="Player" parent="." instance=ExtResource("7_f0e3r")]
-position = Vector2(175, 243)
+position = Vector2(217, 259)
 collision_layer = 3
 
 [node name="敌人" parent="." instance=ExtResource("7_jdgef")]

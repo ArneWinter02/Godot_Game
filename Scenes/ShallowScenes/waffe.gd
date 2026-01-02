@@ -4,6 +4,9 @@ const bullet_scene = preload("res://Scenes/bullet.tscn")
 
 @onready var marker_2d: Marker2D = $Marker2D
 
+func _ready():
+	$Camera2D/MenuScreenFade.show()
+	$Camera2D/MenuScreenFade/AnimationTree.play("fade_out")
 func _physics_process(_delta: float) -> void:
 	look_at(get_global_mouse_position())
 	rotation_degrees = wrap(rotation_degrees, 0, 360)

@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0unbanf4wa0g"]
+[gd_scene load_steps=26 format=3 uid="uid://c0unbanf4wa0g"]
 
-[ext_resource type="Texture2D" uid="uid://mk5gstxah2s8" path="res://Bilder/Bilder/Jagdgewehr.png" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://b4p8cdu3dsal0" path="res://Bilder/Bilder/Plague_doktor.png" id="1_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://o7qc7uhlib0y" path="res://Scenes/Waffe.tscn" id="4_vgqql"]
 
 [sub_resource type="GDScript" id="GDScript_vgqql"]
@@ -9,26 +9,21 @@ script/source = "extends CharacterBody2D
 var direction: Vector2 = Vector2(1,1)
 var speed: int = 125
 
-signal shoot(pos: Vector2, dir: Vector2) 
+signal shoot(_pos: Vector2, dir: Vector2) 
 
-func get_input():
+@onready var animated_sprite = $AnimatedSprite2D
+
+func _physics_process(_delta: float) -> void:
 	direction = Input.get_vector(\"left\", \"right\", \"up\", \"down\")
 	velocity = direction * speed
-	if Input.is_action_just_pressed(\"shoot\") and $ReloadTimer.time_left == 0:
-		shoot.emit(position, get_local_mouse_position().normalized())
-		$ReloadTimer.start()
-func _physics_process(_delta: float) -> void:
-	get_input()
-	animation()
 	move_and_slide()
 
-	
-func animation():
-	if direction:
-		$AnimatedSprite2D.flip_h = direction.x < 0
-	elif direction.x != 0:
-			$AnimatedSprite2D.animation = 'left'
-	$AnimatedSprite2D.frame = 0
+#$AnimatedSprite2D.play(\"vorwärts\")
+func _animation():
+	if get_global_mouse_position().x > 0:
+		pass
+	else:
+		$AnimatedSprite2D.flip_h
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ik7gq"]
@@ -36,19 +31,83 @@ size = Vector2(2.75, 6.84375)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6t5aa"]
 atlas = ExtResource("1_cvnsp")
-region = Rect2(0, 0, 32, 32)
+region = Rect2(0, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vgqql"]
 atlas = ExtResource("1_cvnsp")
-region = Rect2(32, 0, 32, 32)
+region = Rect2(32, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fkybt"]
 atlas = ExtResource("1_cvnsp")
-region = Rect2(96, 0, 32, 32)
+region = Rect2(64, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x3wgy"]
 atlas = ExtResource("1_cvnsp")
-region = Rect2(64, 0, 32, 32)
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3smsa"]
+atlas = ExtResource("1_cvnsp")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8erm5"]
+atlas = ExtResource("1_cvnsp")
+region = Rect2(224, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1ek2"]
+atlas = ExtResource("1_cvnsp")
+region = Rect2(192, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tx1dd"]
+atlas = ExtResource("1_cvnsp")
+region = Rect2(160, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gymyn"]
+atlas = ExtResource("1_cvnsp")
+region = Rect2(128, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pu2lt"]
+atlas = ExtResource("1_cvnsp")
+region = Rect2(96, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ukyrk"]
+atlas = ExtResource("1_cvnsp")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dp3o"]
+atlas = ExtResource("1_cvnsp")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4iuc"]
+atlas = ExtResource("1_cvnsp")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fd4e3"]
+atlas = ExtResource("1_cvnsp")
+region = Rect2(96, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqcod"]
+atlas = ExtResource("1_cvnsp")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igrcy"]
+atlas = ExtResource("1_cvnsp")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fs7ks"]
+atlas = ExtResource("1_cvnsp")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l6n3p"]
+atlas = ExtResource("1_cvnsp")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olqyp"]
+atlas = ExtResource("1_cvnsp")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpjfl"]
+atlas = ExtResource("1_cvnsp")
+region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3smsa"]
 animations = [{
@@ -66,11 +125,71 @@ animations = [{
 "texture": SubResource("AtlasTexture_x3wgy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_fkybt")
+"texture": SubResource("AtlasTexture_3smsa")
 }],
 "loop": true,
-"name": &"left",
-"speed": 5.0
+"name": &"back_left",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8erm5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f1ek2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tx1dd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gymyn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pu2lt")
+}],
+"loop": true,
+"name": &"back_right",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ukyrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7dp3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4iuc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fd4e3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqcod")
+}],
+"loop": true,
+"name": &"for_left",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igrcy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fs7ks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l6n3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olqyp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wpjfl")
+}],
+"loop": true,
+"name": &"for_right",
+"speed": 8.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
@@ -83,16 +202,7 @@ shape = SubResource("RectangleShape2D_ik7gq")
 position = Vector2(0, -1)
 scale = Vector2(0.3125, 0.3125)
 sprite_frames = SubResource("SpriteFrames_3smsa")
-animation = &"left"
+animation = &"for_right"
 
 [node name="Node2D" parent="." instance=ExtResource("4_vgqql")]
-position = Vector2(4, -1)
-
-[node name="Camera2D" type="Camera2D" parent="Node2D"]
-zoom = Vector2(3.5, 3.5)
-limit_left = -180
-limit_top = -450
-limit_right = 1420
-limit_bottom = 450
-position_smoothing_enabled = true
-position_smoothing_speed = 20.0
+position = Vector2(2, -1)

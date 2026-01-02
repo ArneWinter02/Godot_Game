@@ -33,7 +33,6 @@ position_smoothing_enabled = true
 position_smoothing_speed = 20.0
 
 [node name="MenuScreenFade" parent="Camera2D" instance=ExtResource("3_yw6jv")]
-visible = false
 offset_left = -182.0
 offset_top = -103.0
 offset_right = 184.0
