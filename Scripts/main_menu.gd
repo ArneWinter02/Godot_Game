@@ -21,7 +21,7 @@ func _on_play_button_4_pressed() -> void:
 	get_tree().quit()
 func _on_menu_timer_timeout() -> void:
 	if checker == 1:
-		get_tree().change_scene_to_file("res://Scenes/main.tscn")
+		get_tree().change_scene_to_file("res://Scenes/DeeperScene/main.tscn")
 	elif checker == 2:
 		get_tree().change_scene_to_file("res://Scenes/UserInterface/WikiScene.tscn")
 	elif checker == 3:

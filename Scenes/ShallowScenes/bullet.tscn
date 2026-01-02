@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dvqmxgssyakwb"]
 
-[ext_resource type="Script" uid="uid://cpy151ed30dpd" path="res://Scenes/bullet.gd" id="1_41ubq"]
+[ext_resource type="Script" uid="uid://cpy151ed30dpd" path="res://Scripts/bullet.gd" id="1_41ubq"]
 [ext_resource type="Texture2D" uid="uid://di0e4xnpjlske" path="res://Bilder/Bilder/kugel.png" id="2_ygsnr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ycag2"]

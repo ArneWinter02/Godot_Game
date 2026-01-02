@@ -1,6 +1,6 @@
 extends Node2D
 
-const bullet_scene = preload("res://Scenes/bullet.tscn")
+const bullet_scene = preload("res://Scenes/ShallowScenes/bullet.tscn")
 
 @onready var marker_2d: Marker2D = $Marker2D
 

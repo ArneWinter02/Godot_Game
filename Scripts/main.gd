@@ -1,5 +1,5 @@
 extends Node2D
-var bullet_scene = preload("res://Scenes/bullet.tscn")
+var bullet_scene = preload("res://Scenes/ShallowScenes/bullet.tscn")
 
 
 func _ready():

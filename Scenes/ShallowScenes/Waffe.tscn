@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://o7qc7uhlib0y"]
 
 [ext_resource type="Texture2D" uid="uid://mk5gstxah2s8" path="res://Bilder/Bilder/Jagdgewehr.png" id="1_fgwse"]
-[ext_resource type="Script" uid="uid://ddg3bqm61rfuw" path="res://Scenes/ShallowScenes/waffe.gd" id="1_n1sfj"]
+[ext_resource type="Script" uid="uid://ddg3bqm61rfuw" path="res://Scripts/waffe.gd" id="1_n1sfj"]
 [ext_resource type="PackedScene" uid="uid://cn21lfo4rqsxy" path="res://MenuScreenFade.tscn" id="3_yw6jv"]
 
 [node name="Node2D" type="Node2D"]

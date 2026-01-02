@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bpaoblqv1f784" path="res://Dandan/图片材料/water-1 (1).png" id="3_jdgef"]
 [ext_resource type="Texture2D" uid="uid://bujjng345bvmv" path="res://Dandan/图片材料/Boden-2.png" id="4_bekte"]
 [ext_resource type="Texture2D" uid="uid://bgpglqo4a5l7j" path="res://Dandan/图片材料/deko.png" id="5_l1x7s"]
-[ext_resource type="PackedScene" uid="uid://c0unbanf4wa0g" path="res://Scenes/player.tscn" id="7_f0e3r"]
+[ext_resource type="PackedScene" uid="uid://c0unbanf4wa0g" path="res://Scenes/ShallowScenes/player.tscn" id="7_f0e3r"]
 [ext_resource type="PackedScene" uid="uid://dpvw7448rmuqh" path="res://Dandan/scene/enemy.tscn" id="7_jdgef"]
 [ext_resource type="PackedScene" uid="uid://b5kakulprxmw2" path="res://Scenes/UserInterface/ui.tscn" id="8_jdgef"]
 

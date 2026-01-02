@@ -1,7 +1,7 @@
 [gd_scene load_steps=26 format=3 uid="uid://c0unbanf4wa0g"]
 
 [ext_resource type="Texture2D" uid="uid://b4p8cdu3dsal0" path="res://Bilder/Bilder/Plague_doktor.png" id="1_cvnsp"]
-[ext_resource type="PackedScene" uid="uid://o7qc7uhlib0y" path="res://Scenes/Waffe.tscn" id="4_vgqql"]
+[ext_resource type="PackedScene" uid="uid://o7qc7uhlib0y" path="res://Scenes/ShallowScenes/Waffe.tscn" id="4_vgqql"]
 
 [sub_resource type="GDScript" id="GDScript_vgqql"]
 script/source = "extends CharacterBody2D

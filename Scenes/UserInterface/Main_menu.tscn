@@ -1,16 +1,16 @@
 [gd_scene load_steps=8 format=3 uid="uid://bhfyt0f84urdw"]
 
-[ext_resource type="Texture2D" uid="uid://bbwryyyd0vusv" path="res://Bilder/Bilder/MenuHintergrund.png" id="1_7sp8y"]
-[ext_resource type="Script" uid="uid://0aohnpnkjno2" path="res://Scenes/main_menu.gd" id="1_f7j37"]
-[ext_resource type="Texture2D" uid="uid://cuadvu6ndsw4x" path="res://Bilder/Bilder/User_Interface.png" id="2_pc006"]
-[ext_resource type="PackedScene" uid="uid://cn21lfo4rqsxy" path="res://MenuScreenFade.tscn" id="4_787fc"]
+[ext_resource type="Script" uid="uid://0aohnpnkjno2" path="res://Scripts/main_menu.gd" id="1_vtxuq"]
+[ext_resource type="Texture2D" uid="uid://bbwryyyd0vusv" path="res://Bilder/Bilder/MenuHintergrund.png" id="2_vanyt"]
+[ext_resource type="Texture2D" uid="uid://cuadvu6ndsw4x" path="res://Bilder/Bilder/User_Interface.png" id="3_j7c1f"]
+[ext_resource type="PackedScene" uid="uid://cn21lfo4rqsxy" path="res://MenuScreenFade.tscn" id="4_oxh8e"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f7j37"]
-texture = ExtResource("2_pc006")
+texture = ExtResource("3_j7c1f")
 region_rect = Rect2(66, 226, 102, 24)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pc006"]
-texture = ExtResource("2_pc006")
+texture = ExtResource("3_j7c1f")
 region_rect = Rect2(54, 167, 102, 24)
 
 [sub_resource type="LabelSettings" id="LabelSettings_f7j37"]
@@ -19,7 +19,7 @@ outline_color = Color(0, 0, 0, 1)
 
 [node name="Main_menu" type="Node2D"]
 position = Vector2(627, 379)
-script = ExtResource("1_f7j37")
+script = ExtResource("1_vtxuq")
 
 [node name="Control2" type="Control" parent="."]
 layout_mode = 3
@@ -43,7 +43,7 @@ layout_mode = 2
 [node name="BackroundTextur" type="NinePatchRect" parent="Control2/BaseLayer/Menu"]
 layout_mode = 2
 size_flags_stretch_ratio = 0.0
-texture = ExtResource("1_7sp8y")
+texture = ExtResource("2_vanyt")
 
 [node name="MenuSkelett" type="MarginContainer" parent="Control2"]
 layout_mode = 1
@@ -138,7 +138,7 @@ label_settings = SubResource("LabelSettings_f7j37")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MenuScreenFade" parent="Control2" instance=ExtResource("4_787fc")]
+[node name="MenuScreenFade" parent="Control2" instance=ExtResource("4_oxh8e")]
 visible = false
 layout_mode = 1
 offset_left = 1.0
