@@ -20,6 +20,8 @@ outline_color = Color(0, 0, 0, 1)
 [node name="Main_menu" type="Node2D"]
 position = Vector2(627, 379)
 script = ExtResource("1_vtxuq")
+metadata/_edit_vertical_guides_ = [547.0]
+metadata/_edit_horizontal_guides_ = [429.0]
 
 [node name="Control2" type="Control" parent="."]
 layout_mode = 3
@@ -94,9 +96,9 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_pc006")
 [node name="Label" type="Label" parent="Control2/MenuSkelett/MenuContainer/wiki"]
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 0
-offset_top = 1.5
-offset_right = 100.0
-offset_bottom = 50.5
+offset_top = 1.0
+offset_right = 150.0
+offset_bottom = 50.0
 text = "WIKI"
 label_settings = SubResource("LabelSettings_f7j37")
 horizontal_alignment = 1

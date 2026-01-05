@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://beltgkg2sw8os"]
+[gd_scene load_steps=7 format=3 uid="uid://beltgkg2sw8os"]
 
 [ext_resource type="Script" uid="uid://bp24cnq6ddhpr" path="res://Scripts/options.gd" id="1_on2hd"]
 [ext_resource type="Texture2D" uid="uid://cuadvu6ndsw4x" path="res://Bilder/Bilder/User_Interface.png" id="2_sxpqg"]
-[ext_resource type="PackedScene" uid="uid://cn21lfo4rqsxy" path="res://MenuScreenFade.tscn" id="3_cufce"]
 [ext_resource type="Texture2D" uid="uid://bbwryyyd0vusv" path="res://Bilder/Bilder/MenuHintergrund.png" id="4_wmg58"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qfovx"]
@@ -138,13 +137,3 @@ text = "QUIT"
 label_settings = SubResource("LabelSettings_8xd7o")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="MenuScreenFade" parent="Control2" instance=ExtResource("3_cufce")]
-visible = false
-layout_mode = 1
-offset_left = 1.0
-offset_right = 1.0
-
-[node name="MenuTimer" type="Timer" parent="Control2/MenuScreenFade"]
-one_shot = true
-autostart = true
