@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqqv1uw5es1dp"]
+[gd_scene load_steps=14 format=3 uid="uid://dqqv1uw5es1dp"]
 
 [ext_resource type="Script" uid="uid://da33rqamksoj8" path="res://Scripts/wiki_scene.gd" id="1_6aptq"]
 [ext_resource type="Texture2D" uid="uid://bbwryyyd0vusv" path="res://Bilder/Bilder/MenuHintergrund.png" id="2_t5ini"]
 [ext_resource type="Texture2D" uid="uid://cuadvu6ndsw4x" path="res://Bilder/Bilder/User_Interface.png" id="3_pv48h"]
+[ext_resource type="PackedScene" uid="uid://d0ecv0xsv3nty" path="res://Scenes/UserInterface/Backround_Music.tscn" id="4_t5ini"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eit4r"]
 texture = ExtResource("3_pv48h")
@@ -15,6 +16,30 @@ region_rect = Rect2(54, 167, 102, 24)
 [sub_resource type="LabelSettings" id="LabelSettings_1ms1h"]
 outline_size = 2
 outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouuab"]
+atlas = ExtResource("3_pv48h")
+region = Rect2(67, 227, 100, 22)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eit4r"]
+atlas = ExtResource("3_pv48h")
+region = Rect2(55, 168, 100, 22)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ouuab"]
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5ini"]
+atlas = ExtResource("3_pv48h")
+region = Rect2(197, 3, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv48h"]
+atlas = ExtResource("3_pv48h")
+region = Rect2(133, 3, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7t2bd"]
+atlas = ExtResource("3_pv48h")
+region = Rect2(193, 76, 24, 24)
 
 [node name="Control" type="Node2D"]
 script = ExtResource("1_6aptq")
@@ -35,6 +60,7 @@ offset_left = -640.0
 offset_right = 640.0
 offset_bottom = 720.0
 grow_horizontal = 2
+pivot_offset = Vector2(36, 39)
 
 [node name="Menu" type="MarginContainer" parent="Control2/BaseLayer"]
 layout_mode = 2
@@ -44,20 +70,20 @@ layout_mode = 2
 size_flags_stretch_ratio = 0.0
 texture = ExtResource("2_t5ini")
 
-[node name="MenuSkelett" type="MarginContainer" parent="Control2"]
+[node name="Main_Menu_Con" type="MarginContainer" parent="Control2"]
 layout_mode = 0
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 1281.0
-offset_bottom = 721.0
+offset_left = 248.0
+offset_top = 398.0
+offset_right = 1043.0
+offset_bottom = 720.0
 
-[node name="MenuContainer" type="VBoxContainer" parent="Control2/MenuSkelett"]
+[node name="MenuContainer" type="VBoxContainer" parent="Control2/Main_Menu_Con"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 8
 
-[node name="Main Menu" type="Button" parent="Control2/MenuSkelett/MenuContainer"]
+[node name="Main Menu" type="Button" parent="Control2/Main_Menu_Con/MenuContainer"]
 custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -66,7 +92,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_eit4r")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_dpdk5")
 theme_override_styles/hover = SubResource("StyleBoxTexture_dpdk5")
 
-[node name="Label" type="Label" parent="Control2/MenuSkelett/MenuContainer/Main Menu"]
+[node name="Label" type="Label" parent="Control2/Main_Menu_Con/MenuContainer/Main Menu"]
 layout_mode = 0
 offset_right = 150.0
 offset_bottom = 50.5
@@ -75,4 +101,209 @@ label_settings = SubResource("LabelSettings_1ms1h")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="pressed" from="Control2/MenuSkelett/MenuContainer/Main Menu" to="." method="_on_main_menu_pressed"]
+[node name="Menu_Backround" type="MarginContainer" parent="Control2"]
+layout_mode = 0
+offset_left = 324.0
+offset_top = 106.0
+offset_right = 951.0
+offset_bottom = 412.0
+
+[node name="TextureRect" type="TextureRect" parent="Control2/Menu_Backround"]
+layout_mode = 2
+texture = SubResource("AtlasTexture_ouuab")
+stretch_mode = 6
+
+[node name="Label" type="Label" parent="Control2/Menu_Backround/TextureRect"]
+layout_mode = 0
+offset_right = 622.0
+offset_bottom = 365.0
+text = "
+"
+
+[node name="Button Container" type="MarginContainer" parent="Control2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.14722222
+anchor_bottom = -0.14722222
+offset_left = 382.0
+offset_top = 193.0
+offset_right = 896.0
+offset_bottom = 518.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control2/Button Container"]
+custom_minimum_size = Vector2(400, 200)
+layout_direction = 4
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="Control2/Button Container/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+texture = SubResource("AtlasTexture_eit4r")
+
+[node name="Label" type="Label" parent="Control2/Button Container/VBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 3.0
+offset_right = 375.0
+offset_bottom = 27.0
+text = "Auto Aim"
+label_settings = SubResource("LabelSettings_ouuab")
+
+[node name="TextureButton" type="TextureButton" parent="Control2/Button Container/VBoxContainer/TextureRect/Label"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -12.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+toggle_mode = true
+action_mode = 0
+texture_normal = SubResource("AtlasTexture_t5ini")
+texture_pressed = SubResource("AtlasTexture_pv48h")
+texture_hover = SubResource("AtlasTexture_7t2bd")
+
+[node name="TextureRect2" type="TextureRect" parent="Control2/Button Container/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+texture = SubResource("AtlasTexture_eit4r")
+
+[node name="Label" type="Label" parent="Control2/Button Container/VBoxContainer/TextureRect2"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 3.0
+offset_right = 375.0
+offset_bottom = 27.0
+text = "Fullscreen"
+label_settings = SubResource("LabelSettings_ouuab")
+
+[node name="TextureButton" type="TextureButton" parent="Control2/Button Container/VBoxContainer/TextureRect2/Label"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -12.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+toggle_mode = true
+action_mode = 0
+texture_normal = SubResource("AtlasTexture_t5ini")
+texture_pressed = SubResource("AtlasTexture_pv48h")
+texture_hover = SubResource("AtlasTexture_7t2bd")
+
+[node name="TextureRect3" type="TextureRect" parent="Control2/Button Container/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+texture = SubResource("AtlasTexture_eit4r")
+
+[node name="Label" type="Label" parent="Control2/Button Container/VBoxContainer/TextureRect3"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 3.0
+offset_right = 375.0
+offset_bottom = 27.0
+text = "Display Items"
+label_settings = SubResource("LabelSettings_ouuab")
+
+[node name="TextureButton" type="TextureButton" parent="Control2/Button Container/VBoxContainer/TextureRect3/Label"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -12.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+toggle_mode = true
+action_mode = 0
+texture_normal = SubResource("AtlasTexture_t5ini")
+texture_pressed = SubResource("AtlasTexture_pv48h")
+texture_hover = SubResource("AtlasTexture_7t2bd")
+
+[node name="TextureRect4" type="TextureRect" parent="Control2/Button Container/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+texture = SubResource("AtlasTexture_eit4r")
+
+[node name="Label" type="Label" parent="Control2/Button Container/VBoxContainer/TextureRect4"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 3.0
+offset_right = 375.0
+offset_bottom = 27.0
+text = "Sound Effects"
+label_settings = SubResource("LabelSettings_ouuab")
+
+[node name="TextureButton" type="TextureButton" parent="Control2/Button Container/VBoxContainer/TextureRect4/Label"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -12.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+toggle_mode = true
+action_mode = 0
+texture_normal = SubResource("AtlasTexture_t5ini")
+texture_pressed = SubResource("AtlasTexture_pv48h")
+texture_hover = SubResource("AtlasTexture_7t2bd")
+
+[node name="TextureRect5" type="TextureRect" parent="Control2/Button Container/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+texture = SubResource("AtlasTexture_eit4r")
+
+[node name="Label" type="Label" parent="Control2/Button Container/VBoxContainer/TextureRect5"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 3.0
+offset_right = 375.0
+offset_bottom = 27.0
+text = "Music"
+label_settings = SubResource("LabelSettings_ouuab")
+
+[node name="TextureButton" type="TextureButton" parent="Control2/Button Container/VBoxContainer/TextureRect5/Label"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -12.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+toggle_mode = true
+action_mode = 0
+texture_normal = SubResource("AtlasTexture_t5ini")
+texture_pressed = SubResource("AtlasTexture_pv48h")
+texture_hover = SubResource("AtlasTexture_7t2bd")
+
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("4_t5ini")]
+
+[connection signal="pressed" from="Control2/Main_Menu_Con/MenuContainer/Main Menu" to="." method="_on_main_menu_pressed"]

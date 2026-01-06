@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0ecv0xsv3nty"]
+
+[ext_resource type="AudioStream" uid="uid://dja1lyd8w4btc" path="res://assets/Music/cafe-music-349477.mp3" id="1_nutpd"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer"]
+stream = ExtResource("1_nutpd")
+volume_db = -30.0
