@@ -32,3 +32,7 @@ func _on_detection_area_body_entered(body):
 func _on_detection_area_body_exited(_body):
 		player = null
 		player_in_area = false
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	pass # Replace with function body.

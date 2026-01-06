@@ -1,33 +1,34 @@
 extends CharacterBody2D
 
 
-const SPEED = 100
+var speed = 50
 
-var player_state
+var health = 100
+var damage
 
-func _physics_process(delta):
-	var direction = Input.get_vector("left","right", "up","down")
-	
-	if direction.x == 0 and direction.y == 0:
-		player_state = "idle"
-	elif direction.x != 0 or direction.y !=0:
-		player_state = "walking"
-	velocity = direction * SPEED
-	move_and_slide()
-	
-	play_anim(direction)
-	
-func play_anim(dir): 	
-	if player_state =="idle":
-		$AnimatedSprite2D.play("idle")
-	if player_state == "walking":
-		if dir.y == -1:
-			$AnimatedSprite2D.play("rightwalk")	
-		if dir.x == 1:
+var dead = false
+var player_in_area = false
+var player = null
+
+func _ready():
+	dead = false
+func _physics_process(_delta):
+	if !dead:
+		$detection_area/CollisionShape2D.disabled = false
+		if player_in_area:
+			position += (player.position - position) / speed
 			$AnimatedSprite2D.play("rightwalk")
-		if dir.y == 1:
+		else:
 			$AnimatedSprite2D.play("idle")
-		if dir.x == -1:
-			$AnimatedSprite2D.play("idle")
-			
-	
+	if dead:
+		$detection_area/CollisionShape2D.disabled = true
+
+
+func _on_detection_area_body_entered(body):
+		player = body
+		player_in_area = true
+		
+		
+func _on_detection_area_body_exited(_body):
+		player = null
+		player_in_area = false
