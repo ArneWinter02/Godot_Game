@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bhfyt0f84urdw"]
+[gd_scene load_steps=7 format=3 uid="uid://bhfyt0f84urdw"]
 
 [ext_resource type="Texture2D" uid="uid://bbwryyyd0vusv" path="res://Bilder/Bilder/MenuHintergrund.png" id="1_7sp8y"]
+[ext_resource type="Script" uid="uid://0aohnpnkjno2" path="res://Scenes/main_menu.gd" id="1_f7j37"]
 [ext_resource type="Texture2D" uid="uid://cuadvu6ndsw4x" path="res://Bilder/Bilder/User_Interface.png" id="2_pc006"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f7j37"]
@@ -22,6 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_f7j37")
 
 [node name="BaseLayer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -131,3 +133,8 @@ text = "QUIT"
 label_settings = SubResource("LabelSettings_f7j37")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="pressed" from="MenuSkelett/MenuContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MenuSkelett/MenuContainer/PlayButton2" to="." method="_on_play_button_2_pressed"]
+[connection signal="pressed" from="MenuSkelett/MenuContainer/PlayButton3" to="." method="_on_play_button_3_pressed"]
+[connection signal="pressed" from="MenuSkelett/MenuContainer/PlayButton4" to="." method="_on_play_button_4_pressed"]

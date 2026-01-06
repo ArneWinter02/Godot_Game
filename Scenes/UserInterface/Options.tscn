@@ -1,0 +1,100 @@
+[gd_scene load_steps=7 format=3 uid="uid://beltgkg2sw8os"]
+
+[ext_resource type="Script" uid="uid://bp24cnq6ddhpr" path="res://Scripts/options.gd" id="1_on2hd"]
+[ext_resource type="Texture2D" uid="uid://cuadvu6ndsw4x" path="res://Bilder/Bilder/User_Interface.png" id="2_sxpqg"]
+[ext_resource type="Texture2D" uid="uid://bbwryyyd0vusv" path="res://Bilder/Bilder/MenuHintergrund.png" id="4_wmg58"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qfovx"]
+texture = ExtResource("2_sxpqg")
+region_rect = Rect2(66, 226, 102, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5ched"]
+texture = ExtResource("2_sxpqg")
+region_rect = Rect2(54, 167, 102, 24)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8xd7o"]
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Control" type="Node2D"]
+position = Vector2(627, 379)
+script = ExtResource("1_on2hd")
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -627.0
+offset_top = -379.0
+offset_right = 653.0
+offset_bottom = 341.0
+metadata/_edit_use_anchors_ = true
+
+[node name="BaseLayer" type="MarginContainer" parent="Control2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu" type="MarginContainer" parent="Control2/BaseLayer"]
+layout_mode = 2
+
+[node name="BackroundTextur" type="NinePatchRect" parent="Control2/BaseLayer/Menu"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("4_wmg58")
+
+[node name="MenuSkelett" type="MarginContainer" parent="Control2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -488.0
+offset_top = -155.0
+offset_right = 453.0
+offset_bottom = 162.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuContainer" type="VBoxContainer" parent="Control2/MenuSkelett"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="settings" type="Button" parent="Control2/MenuSkelett/MenuContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_qfovx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5ched")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5ched")
+
+[node name="Label" type="Label" parent="Control2/MenuSkelett/MenuContainer/settings"]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 50.5
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_8xd7o")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="quit" type="Button" parent="Control2/MenuSkelett/MenuContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_qfovx")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_5ched")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5ched")
+
+[node name="Label" type="Label" parent="Control2/MenuSkelett/MenuContainer/quit"]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 50.5
+text = "MAIN MENU"
+label_settings = SubResource("LabelSettings_8xd7o")
+horizontal_alignment = 1
+vertical_alignment = 1

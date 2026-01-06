@@ -1,0 +1,167 @@
+[gd_scene load_steps=9 format=3 uid="uid://bhfyt0f84urdw"]
+
+[ext_resource type="Script" uid="uid://0aohnpnkjno2" path="res://Scripts/main_menu.gd" id="1_vtxuq"]
+[ext_resource type="Texture2D" uid="uid://bbwryyyd0vusv" path="res://Bilder/Bilder/MenuHintergrund.png" id="2_vanyt"]
+[ext_resource type="Texture2D" uid="uid://cuadvu6ndsw4x" path="res://Bilder/Bilder/User_Interface.png" id="3_j7c1f"]
+[ext_resource type="PackedScene" uid="uid://cn21lfo4rqsxy" path="res://MenuScreenFade.tscn" id="4_oxh8e"]
+[ext_resource type="PackedScene" uid="uid://d0ecv0xsv3nty" path="res://Scenes/UserInterface/Backround_Music.tscn" id="5_vanyt"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f7j37"]
+texture = ExtResource("3_j7c1f")
+region_rect = Rect2(66, 226, 102, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pc006"]
+texture = ExtResource("3_j7c1f")
+region_rect = Rect2(54, 167, 102, 24)
+
+[sub_resource type="LabelSettings" id="LabelSettings_f7j37"]
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Main_menu" type="Node2D"]
+position = Vector2(627, 379)
+script = ExtResource("1_vtxuq")
+metadata/_edit_vertical_guides_ = [547.0]
+metadata/_edit_horizontal_guides_ = [429.0]
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -627.0
+offset_top = -379.0
+offset_right = 653.0
+offset_bottom = 341.0
+
+[node name="BaseLayer" type="MarginContainer" parent="Control2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Menu" type="MarginContainer" parent="Control2/BaseLayer"]
+layout_mode = 2
+
+[node name="BackroundTextur" type="NinePatchRect" parent="Control2/BaseLayer/Menu"]
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+texture = ExtResource("2_vanyt")
+
+[node name="MenuSkelett" type="MarginContainer" parent="Control2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -488.0
+offset_top = -298.0
+offset_right = 453.0
+offset_bottom = 291.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuContainer" type="VBoxContainer" parent="Control2/MenuSkelett"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+
+[node name="start" type="Button" parent="Control2/MenuSkelett/MenuContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_f7j37")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pc006")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pc006")
+
+[node name="Label" type="Label" parent="Control2/MenuSkelett/MenuContainer/start"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 0
+offset_right = 195.0
+offset_bottom = 50.5
+text = "START"
+label_settings = SubResource("LabelSettings_f7j37")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="wiki" type="Button" parent="Control2/MenuSkelett/MenuContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_f7j37")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pc006")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pc006")
+
+[node name="Label" type="Label" parent="Control2/MenuSkelett/MenuContainer/wiki"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 0
+offset_top = 1.0
+offset_right = 150.0
+offset_bottom = 50.0
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_f7j37")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="settings" type="Button" parent="Control2/MenuSkelett/MenuContainer"]
+visible = false
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_f7j37")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pc006")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pc006")
+
+[node name="Label" type="Label" parent="Control2/MenuSkelett/MenuContainer/settings"]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 50.5
+text = "SETTINGS"
+label_settings = SubResource("LabelSettings_f7j37")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="quit" type="Button" parent="Control2/MenuSkelett/MenuContainer"]
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxTexture_f7j37")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_pc006")
+theme_override_styles/hover = SubResource("StyleBoxTexture_pc006")
+
+[node name="Label" type="Label" parent="Control2/MenuSkelett/MenuContainer/quit"]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 50.5
+text = "QUIT"
+label_settings = SubResource("LabelSettings_f7j37")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuScreenFade" parent="Control2" instance=ExtResource("4_oxh8e")]
+visible = false
+layout_mode = 1
+offset_left = 1.0
+offset_right = 1.0
+
+[node name="MenuTimer" type="Timer" parent="Control2/MenuScreenFade"]
+one_shot = true
+autostart = true
+
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("5_vanyt")]
+autoplay = false
+
+[connection signal="pressed" from="Control2/MenuSkelett/MenuContainer/start" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Control2/MenuSkelett/MenuContainer/start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Control2/MenuSkelett/MenuContainer/wiki" to="." method="_on_play_button_2_pressed"]
+[connection signal="pressed" from="Control2/MenuSkelett/MenuContainer/wiki" to="." method="_on_wiki_pressed"]
+[connection signal="pressed" from="Control2/MenuSkelett/MenuContainer/settings" to="." method="_on_play_button_3_pressed"]
+[connection signal="pressed" from="Control2/MenuSkelett/MenuContainer/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Control2/MenuSkelett/MenuContainer/quit" to="." method="_on_play_button_4_pressed"]
+[connection signal="timeout" from="Control2/MenuScreenFade/MenuTimer" to="." method="_on_menu_timer_timeout"]

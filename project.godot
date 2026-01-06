@@ -10,13 +10,14 @@ config_version=5
 
 [application]
 
-config/name="Scuba Diver"
-run/main_scene="uid://b0edelq78t3rx"
+config/name="Monster Hunter"
+run/main_scene="uid://bhfyt0f84urdw"
 config/features=PackedStringArray("4.5", "Forward Plus")
 
 [autoload]
 
 Global="*res://Scripts/Stats für Spieler und Gegner/Global.gd"
+BackroundMusic="res://Scenes/UserInterface/Backround_Music.tscn"
 
 [display]
 

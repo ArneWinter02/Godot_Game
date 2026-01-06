@@ -451,7 +451,7 @@ tile_map_data = PackedByteArray("AAALAAYAAAAAAAAAAAAOAAYAAAAAAAAAAAATAAQAAAAAAAA
 tile_set = SubResource("TileSet_ylmam")
 
 [node name="Player" parent="." instance=ExtResource("7_f0e3r")]
-position = Vector2(175, 243)
+position = Vector2(217, 259)
 collision_layer = 3
 
 [node name="敌人" parent="." instance=ExtResource("7_jdgef")]

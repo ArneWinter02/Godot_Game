@@ -4,7 +4,7 @@ extends CharacterBody2D
 var speed = 50
 
 var health = 100
-var damage
+var damage = 10
 
 var dead = false
 var player_in_area = false
