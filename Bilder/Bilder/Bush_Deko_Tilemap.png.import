@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b283n2iepwb3f"
-path="res://.godot/imported/Unterkörper.png-2fa47ec72fab32913bcb7600f107fe9e.ctex"
+uid="uid://cmi2sk3rpe5px"
+path="res://.godot/imported/Bush_Deko_Tilemap.png-33c4653d02166bdb163720166617b395.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bilder/Bilder/Unterkörper.png"
-dest_files=["res://.godot/imported/Unterkörper.png-2fa47ec72fab32913bcb7600f107fe9e.ctex"]
+source_file="res://Bilder/Bilder/Bush_Deko_Tilemap.png"
+dest_files=["res://.godot/imported/Bush_Deko_Tilemap.png-33c4653d02166bdb163720166617b395.ctex"]
 
 [params]
 
