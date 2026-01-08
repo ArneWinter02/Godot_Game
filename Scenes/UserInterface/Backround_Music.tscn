@@ -1,9 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0ecv0xsv3nty"]
+[gd_scene load_steps=4 format=3 uid="uid://d0ecv0xsv3nty"]
 
 [ext_resource type="AudioStream" uid="uid://dja1lyd8w4btc" path="res://assets/Music/cafe-music-349477.mp3" id="1_nutpd"]
 
-[node name="AudioStreamPlayer2D" type="Node2D"]
+[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_nutpd"]
+stream_count = 2
 
-[node name="Node2D" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_nutpd")
+[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_f0mkk"]
+clip_count = 2
+clip_0/name = &"MenuMusic"
+clip_0/stream = ExtResource("1_nutpd")
+clip_0/auto_advance = 0
+clip_1/name = &"LevelMusic"
+clip_1/stream = SubResource("AudioStreamPlaylist_nutpd")
+clip_1/auto_advance = 0
+_transitions = {
+Vector2i(0, 0): {
+"fade_beats": 1.0,
+"fade_mode": 4,
+"from_time": 0,
+"to_time": 0
+}
+}
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer"]
+stream = SubResource("AudioStreamInteractive_f0mkk")
 volume_db = -30.0
+autoplay = true
+bus = &"Music"

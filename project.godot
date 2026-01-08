@@ -16,8 +16,7 @@ config/features=PackedStringArray("4.5", "Forward Plus")
 
 [autoload]
 
-Global="*res://Scripts/Stats für Spieler und Gegner/Global.gd"
-BackroundMusic="res://Scenes/UserInterface/Backround_Music.tscn"
+BackroundMusic="*res://Scenes/UserInterface/Backround_Music.tscn"
 
 [display]
 

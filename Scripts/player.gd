@@ -7,6 +7,11 @@ signal shoot(_pos: Vector2, dir: Vector2)
 
 @onready var animated_sprite = $AnimatedSprite2D
 
+func _ready() -> void:
+	$Camera2D/MenuScreenFade.show()
+	$Camera2D/MenuScreenFade/AnimationTree.play("fade_out")
+
+
 func _physics_process(_float):
 	direction = Input.get_vector("left", "right", "up", "down")
 	velocity = direction * speed

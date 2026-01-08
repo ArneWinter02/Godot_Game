@@ -1,6 +1,8 @@
 extends Node2D
-
 var checker = 0
+
+func _ready() -> void:
+	pass
 func _on_start_pressed() -> void:
 	checker = 1
 	$Control2/MenuScreenFade.show()

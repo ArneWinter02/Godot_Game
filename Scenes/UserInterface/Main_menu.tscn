@@ -14,7 +14,8 @@ texture = ExtResource("3_j7c1f")
 region_rect = Rect2(54, 167, 102, 24)
 
 [sub_resource type="LabelSettings" id="LabelSettings_f7j37"]
-outline_size = 2
+font_size = 18
+outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
 [node name="Main_menu" type="Node2D"]

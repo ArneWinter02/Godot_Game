@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dqqv1uw5es1dp"]
+[gd_scene load_steps=16 format=3 uid="uid://dqqv1uw5es1dp"]
 
 [ext_resource type="Script" uid="uid://da33rqamksoj8" path="res://Scripts/wiki_scene.gd" id="1_6aptq"]
 [ext_resource type="Texture2D" uid="uid://bbwryyyd0vusv" path="res://Bilder/Bilder/MenuHintergrund.png" id="2_t5ini"]
@@ -13,7 +13,8 @@ texture = ExtResource("3_pv48h")
 region_rect = Rect2(54, 167, 102, 24)
 
 [sub_resource type="LabelSettings" id="LabelSettings_1ms1h"]
-outline_size = 2
+font_size = 18
+outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ouuab"]
@@ -25,7 +26,8 @@ atlas = ExtResource("3_pv48h")
 region = Rect2(55, 168, 100, 22)
 
 [sub_resource type="LabelSettings" id="LabelSettings_ouuab"]
-outline_size = 2
+font_size = 18
+outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dpdk5"]
@@ -46,6 +48,8 @@ region = Rect2(133, 3, 24, 24)
 [sub_resource type="AtlasTexture" id="AtlasTexture_7t2bd"]
 atlas = ExtResource("3_pv48h")
 region = Rect2(193, 76, 24, 24)
+
+[sub_resource type="DPITexture" id="DPITexture_t5ini"]
 
 [node name="Control" type="Node2D"]
 script = ExtResource("1_6aptq")
@@ -251,27 +255,25 @@ offset_left = 13.0
 offset_top = 3.0
 offset_right = 375.0
 offset_bottom = 27.0
-text = "Sound Effects"
+text = "Master Volume"
 label_settings = SubResource("LabelSettings_ouuab")
 
-[node name="TextureButton" type="TextureButton" parent="Control2/Button Container/VBoxContainer/TextureRect4/Label"]
+[node name="Master_Volume" type="HSlider" parent="Control2/Button Container/VBoxContainer/TextureRect4/Label"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -24.0
+offset_left = -184.0
 offset_top = -12.0
 offset_bottom = 12.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 8
-toggle_mode = true
-action_mode = 0
-texture_normal = SubResource("AtlasTexture_t5ini")
-texture_pressed = SubResource("AtlasTexture_pv48h")
-texture_hover = SubResource("AtlasTexture_7t2bd")
+max_value = 1.5
+step = 0.001
+value = 1.5
 
 [node name="TextureRect5" type="TextureRect" parent="Control2/Button Container/VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
@@ -284,26 +286,61 @@ offset_left = 13.0
 offset_top = 3.0
 offset_right = 375.0
 offset_bottom = 27.0
-text = "Music"
+text = "Music Volume"
 label_settings = SubResource("LabelSettings_ouuab")
 
-[node name="TextureButton" type="TextureButton" parent="Control2/Button Container/VBoxContainer/TextureRect5/Label"]
+[node name="Music_Volume" type="HSlider" parent="Control2/Button Container/VBoxContainer/TextureRect5/Label"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = -24.0
+offset_left = -184.0
 offset_top = -12.0
 offset_bottom = 12.0
 grow_horizontal = 0
 grow_vertical = 2
 size_flags_horizontal = 8
-toggle_mode = true
-action_mode = 0
-texture_normal = SubResource("AtlasTexture_t5ini")
-texture_pressed = SubResource("AtlasTexture_pv48h")
-texture_hover = SubResource("AtlasTexture_7t2bd")
+theme_override_icons/tick = SubResource("DPITexture_t5ini")
+max_value = 1.5
+step = 0.001
+value = 1.5
+
+[node name="TextureRect7" type="TextureRect" parent="Control2/Button Container/VBoxContainer"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+texture = SubResource("AtlasTexture_eit4r")
+
+[node name="Label" type="Label" parent="Control2/Button Container/VBoxContainer/TextureRect7"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 3.0
+offset_right = 375.0
+offset_bottom = 27.0
+text = "SFX Volume"
+label_settings = SubResource("LabelSettings_ouuab")
+
+[node name="SFX Volume" type="HSlider" parent="Control2/Button Container/VBoxContainer/TextureRect7/Label"]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -184.0
+offset_top = -12.0
+offset_bottom = 12.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 8
+max_value = 1.5
+step = 0.001
+value = 1.5
+tick_count = 1
 
 [connection signal="pressed" from="Control2/Main_Menu_Con/MenuContainer/Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="value_changed" from="Control2/Button Container/VBoxContainer/TextureRect4/Label/Master_Volume" to="." method="_on_master_volume_value_changed"]
+[connection signal="value_changed" from="Control2/Button Container/VBoxContainer/TextureRect5/Label/Music_Volume" to="." method="_on_music_volume_value_changed"]
+[connection signal="value_changed" from="Control2/Button Container/VBoxContainer/TextureRect7/Label/SFX Volume" to="." method="_on_sfx_volume_value_changed"]
