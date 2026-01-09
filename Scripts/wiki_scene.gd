@@ -1,7 +1,8 @@
 extends Node2D
 var checker = 0
 
-
+func _ready():
+	Global.musicChecker = "Menu"
 func _on_main_menu_pressed() -> void:
 	checker = 1
 	if checker == 1:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://b0edelq78t3rx"]
+[gd_scene load_steps=22 format=4 uid="uid://b0edelq78t3rx"]
 
 [ext_resource type="Texture2D" uid="uid://bjmnikyt888tl" path="res://Bilder/Bilder/Tileset_map.png" id="1_jjvhh"]
 [ext_resource type="Script" uid="uid://dfjklmvwpv61w" path="res://Scripts/main.gd" id="1_kry3j"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://b5kakulprxmw2" path="res://Scenes/UserInterface/ui.tscn" id="7_6bp64"]
 [ext_resource type="PackedScene" uid="uid://dpvw7448rmuqh" path="res://Dandan/scene/enemy.tscn" id="7_344ge"]
 [ext_resource type="PackedScene" uid="uid://cn21lfo4rqsxy" path="res://MenuScreenFade.tscn" id="8_joduy"]
+[ext_resource type="PackedScene" uid="uid://d0ecv0xsv3nty" path="res://Scenes/UserInterface/Backround_Music.tscn" id="9_rusth"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kry3j"]
 texture = ExtResource("1_jjvhh")
@@ -49,6 +50,9 @@ script/source = "extends Area2D
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rusth"]
 size = Vector2(20, 60)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_joduy"]
+size = Vector2(1584, 936)
 
 [node name="Intro" type="Node2D"]
 position = Vector2(624, -4)
@@ -142,6 +146,15 @@ offset_bottom = 679.0
 [node name="Timer" type="Timer" parent="MenuScreenFade"]
 wait_time = 0.1
 
+[node name="MusicChanger" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MusicChanger"]
+position = Vector2(-10, 1)
+shape = SubResource("RectangleShape2D_joduy")
+
+[node name="AudioStreamPlayer" parent="." instance=ExtResource("9_rusth")]
+
 [connection signal="shoot" from="Enteties/Player" to="." method="_on_player_shoot"]
 [connection signal="body_entered" from="MapTransition" to="." method="_on_static_body_2d_body_entered"]
 [connection signal="timeout" from="MenuScreenFade/Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="MusicChanger" to="." method="_on_area_2d_body_entered"]
