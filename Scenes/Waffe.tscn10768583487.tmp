@@ -12,8 +12,12 @@ position = Vector2(7.3, 0)
 gizmo_extents = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+<<<<<<< Updated upstream:Scenes/Waffe.tscn10768583487.tmp
 position = Vector2(2, -3.761582e-37)
 scale = Vector2(0.3888889, 0.26562497)
+=======
+scale = Vector2(0.3796296, 0.31463072)
+>>>>>>> Stashed changes:Scenes/Waffe.tscn
 texture = ExtResource("1_fgwse")
 region_enabled = true
 region_rect = Rect2(64, 49, 27, 11)

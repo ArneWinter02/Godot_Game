@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6ce30o3gmcqf"]
+
+[ext_resource type="Texture2D" uid="uid://cio7nv6o8d5q1" path="res://Dandan/图片材料/Inventory2.png.png" id="1_dfngl"]
+[ext_resource type="Script" uid="uid://caer3win1384r" path="res://inventory/inv_ui_slot.gd" id="1_fcwim"]
+
+[node name="inv_UI_slot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(26, 21)
+offset_right = 26.0
+offset_bottom = 21.0
+script = ExtResource("1_fcwim")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-12.000001, -13.000001)
+scale = Vector2(0.4296875, 0.3671875)
+texture = ExtResource("1_dfngl")
+centered = false
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(26, 21)
+layout_mode = 0
+offset_right = 26.0
+offset_bottom = 21.0
+
+[node name="Panel" type="Panel" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="item_display" type="Sprite2D" parent="CenterContainer/Panel"]
+
+[node name="Label" type="Label" parent="CenterContainer/Panel"]
+custom_minimum_size = Vector2(19, 23)
+layout_mode = 0
+offset_left = 1.5
+offset_right = 20.5
+offset_bottom = 23.0
+scale = Vector2(0.5, 0.5)
+text = "99"
+horizontal_alignment = 2

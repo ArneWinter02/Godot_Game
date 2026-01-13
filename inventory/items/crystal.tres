@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dt13aedtrv7s6"]
+
+[ext_resource type="Script" uid="uid://dr7n42p5vhkv4" path="res://inventory/inventory_item.gd" id="1_d5opq"]
+[ext_resource type="Texture2D" uid="uid://d1fydhdvyc0an" path="res://Dandan/图片材料/crystal.png" id="2_vj5y8"]
+
+[resource]
+script = ExtResource("1_d5opq")
+name = "crystal"
+texture = ExtResource("2_vj5y8")
+metadata/_custom_type_script = "uid://dr7n42p5vhkv4"

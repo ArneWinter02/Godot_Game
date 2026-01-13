@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dnijnj1mr66um"]
+
+[ext_resource type="Script" uid="uid://dr7n42p5vhkv4" path="res://inventory/inventory_item.gd" id="1_cd3v3"]
+[ext_resource type="Texture2D" uid="uid://c711qgfntbio5" path="res://Dandan/图片材料/apple.png.png" id="2_cepck"]
+
+[resource]
+script = ExtResource("1_cd3v3")
+name = "apple"
+texture = ExtResource("2_cepck")
+metadata/_custom_type_script = "uid://dr7n42p5vhkv4"

@@ -1,3 +1,5 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+Dandan/scene/apple_tree.tscn
+Dandan/scene/crystal_colletalbe.tscn

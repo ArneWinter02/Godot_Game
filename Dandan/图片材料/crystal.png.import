@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3gchklenbd8j"
-path="res://.godot/imported/Boden-2.png-1e2f19509252ff035fdcbca6ef9d661f.ctex"
+uid="uid://d1fydhdvyc0an"
+path="res://.godot/imported/crystal.png-d39722a3c22239942752521b325f88c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Dandan/scene/Boden-2.png"
-dest_files=["res://.godot/imported/Boden-2.png-1e2f19509252ff035fdcbca6ef9d661f.ctex"]
+source_file="res://Dandan/图片材料/crystal.png"
+dest_files=["res://.godot/imported/crystal.png-d39722a3c22239942752521b325f88c8.ctex"]
 
 [params]
 

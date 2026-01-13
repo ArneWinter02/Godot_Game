@@ -29,3 +29,4 @@ func _physics_process(_delta: float) -> void:
 	if Global.magazin_cur == 0 and $Reload.time_left == 0:
 		$Reload.start()
 		Global.magazin_cur = Global.magazin_max
+		

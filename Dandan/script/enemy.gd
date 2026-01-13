@@ -4,7 +4,11 @@ extends CharacterBody2D
 var speed = 50
 
 var health = 100
+<<<<<<< Updated upstream
 var damage = 10
+=======
+
+>>>>>>> Stashed changes
 
 var dead = false
 var player_in_area = false
@@ -32,7 +36,25 @@ func _on_detection_area_body_entered(body):
 func _on_detection_area_body_exited(_body):
 		player = null
 		player_in_area = false
+		
 
 
-func _on_hitbox_area_entered(area: Area2D) -> void:
-	pass # Replace with function body.
+func _on_hitbox_area_entered(area):
+	var damage
+	if area.has_method("arrow_deal_damage"):
+		damage = 50
+		take_damage(damage)
+
+func take_damage(damage):
+	
+	health = health - damage
+	if health <= 0 and !dead:
+		death()
+
+func death():
+	dead = true
+	$AnimatedSprite2D.play("death")
+	await get_tree().create_timer(1).timeout
+	queue_free()
+		
+	
