@@ -1,0 +1,12 @@
+[gd_scene load_steps=4 format=3 uid="uid://wf2x8rrsaw1l"]
+
+[ext_resource type="PackedScene" uid="uid://c0unbanf4wa0g" path="res://Scenes/ShallowScenes/player.tscn" id="1_oa8wt"]
+[ext_resource type="Script" uid="uid://co6tdsoxw5urp" path="res://Scenes/DeeperScene/beginning.gd" id="1_opek6"]
+[ext_resource type="PackedScene" uid="uid://b5kakulprxmw2" path="res://Scenes/UserInterface/ui.tscn" id="2_taqth"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_opek6")
+
+[node name="Player" parent="." instance=ExtResource("1_oa8wt")]
+
+[node name="UI" parent="." instance=ExtResource("2_taqth")]

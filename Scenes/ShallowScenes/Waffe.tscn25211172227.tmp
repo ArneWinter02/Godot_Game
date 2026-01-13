@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://o7qc7uhlib0y"]
+
+[ext_resource type="Texture2D" uid="uid://mk5gstxah2s8" path="res://Bilder/Bilder/Jagdgewehr.png" id="1_fgwse"]
+[ext_resource type="Script" uid="uid://ddg3bqm61rfuw" path="res://Scripts/waffe.gd" id="1_n1sfj"]
+[ext_resource type="PackedScene" uid="uid://cn21lfo4rqsxy" path="res://MenuScreenFade.tscn" id="3_yw6jv"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_n1sfj")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(7.3, 0)
+gizmo_extents = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, -3.761582e-37)
+scale = Vector2(0.3888889, 0.26562497)
+texture = ExtResource("1_fgwse")
+region_enabled = true
+region_rect = Rect2(64, 49, 27, 11)
+
+[node name="fire_rate" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="reload" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3.5, 3.5)
+limit_left = -180
+limit_top = -450
+limit_right = 1420
+limit_bottom = 450
+position_smoothing_enabled = true
+position_smoothing_speed = 20.0
+
+[node name="MenuScreenFade" parent="Camera2D" instance=ExtResource("3_yw6jv")]
+visible = false
+offset_left = -1133.0
+offset_top = -880.0
+offset_right = 1299.0
+offset_bottom = 779.0
