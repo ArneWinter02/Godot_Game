@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bhfyt0f84urdw"]
+[gd_scene load_steps=9 format=3 uid="uid://bhfyt0f84urdw"]
 
 [ext_resource type="Script" uid="uid://0aohnpnkjno2" path="res://Scripts/main_menu.gd" id="1_vtxuq"]
 [ext_resource type="Texture2D" uid="uid://bbwryyyd0vusv" path="res://Bilder/Bilder/MenuHintergrund.png" id="2_vanyt"]
 [ext_resource type="Texture2D" uid="uid://cuadvu6ndsw4x" path="res://Bilder/Bilder/User_Interface.png" id="3_j7c1f"]
 [ext_resource type="PackedScene" uid="uid://cn21lfo4rqsxy" path="res://MenuScreenFade.tscn" id="4_oxh8e"]
+[ext_resource type="PackedScene" uid="uid://d0ecv0xsv3nty" path="res://Scenes/UserInterface/Backround_Music.tscn" id="5_vanyt"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_f7j37"]
 texture = ExtResource("3_j7c1f")
@@ -14,8 +15,7 @@ texture = ExtResource("3_j7c1f")
 region_rect = Rect2(54, 167, 102, 24)
 
 [sub_resource type="LabelSettings" id="LabelSettings_f7j37"]
-font_size = 18
-outline_size = 5
+outline_size = 2
 outline_color = Color(0, 0, 0, 1)
 
 [node name="Main_menu" type="Node2D"]
@@ -154,11 +154,14 @@ offset_right = 1.0
 one_shot = true
 autostart = true
 
-[connection signal="pressed" from="Control2/MenuSkelett/MenuContainer/start" to="." method="_on_start_pressed"]
+[node name="AudioStreamPlayer2D" parent="." instance=ExtResource("5_vanyt")]
+autoplay = false
+
 [connection signal="pressed" from="Control2/MenuSkelett/MenuContainer/start" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="Control2/MenuSkelett/MenuContainer/wiki" to="." method="_on_wiki_pressed"]
+[connection signal="pressed" from="Control2/MenuSkelett/MenuContainer/start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Control2/MenuSkelett/MenuContainer/wiki" to="." method="_on_play_button_2_pressed"]
-[connection signal="pressed" from="Control2/MenuSkelett/MenuContainer/settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Control2/MenuSkelett/MenuContainer/wiki" to="." method="_on_wiki_pressed"]
 [connection signal="pressed" from="Control2/MenuSkelett/MenuContainer/settings" to="." method="_on_play_button_3_pressed"]
+[connection signal="pressed" from="Control2/MenuSkelett/MenuContainer/settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Control2/MenuSkelett/MenuContainer/quit" to="." method="_on_play_button_4_pressed"]
 [connection signal="timeout" from="Control2/MenuScreenFade/MenuTimer" to="." method="_on_menu_timer_timeout"]
