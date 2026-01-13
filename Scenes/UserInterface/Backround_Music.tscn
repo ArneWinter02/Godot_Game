@@ -1,38 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0ecv0xsv3nty"]
+[gd_scene load_steps=2 format=3 uid="uid://d0ecv0xsv3nty"]
 
-[ext_resource type="AudioStream" uid="uid://dja1lyd8w4btc" path="res://assets/Music/Menu/cafe-music-349477.mp3" id="2_f0mkk"]
-[ext_resource type="AudioStream" uid="uid://ce30w2tnb5mrx" path="res://assets/Music/Level/bone-duo-444632.mp3" id="3_faxs0"]
-[ext_resource type="AudioStream" uid="uid://dl2att6c8yi05" path="res://assets/Music/Level/a-king-corrupted-percussed-444633.mp3" id="4_gydhr"]
-[ext_resource type="Script" uid="uid://d0otr74yyg47o" path="res://Scenes/UserInterface/backround_music.gd" id="5_faxs0"]
-[ext_resource type="AudioStream" uid="uid://dh37jh7sq2l4r" path="res://assets/Music/Level/it-takes-initiative-444628.mp3" id="5_i7hgc"]
+[ext_resource type="AudioStream" uid="uid://dja1lyd8w4btc" path="res://assets/Music/cafe-music-349477.mp3" id="1_nutpd"]
 
-[sub_resource type="AudioStreamPlaylist" id="AudioStreamPlaylist_vd0cr"]
-stream_count = 3
-stream_0 = ExtResource("3_faxs0")
-stream_1 = ExtResource("4_gydhr")
-stream_2 = ExtResource("5_i7hgc")
-
-[sub_resource type="AudioStreamInteractive" id="AudioStreamInteractive_nutpd"]
-clip_count = 2
-clip_0/name = &"Menu"
-clip_0/stream = ExtResource("2_f0mkk")
-clip_0/auto_advance = 0
-clip_1/name = &"Level"
-clip_1/stream = SubResource("AudioStreamPlaylist_vd0cr")
-clip_1/auto_advance = 0
-_transitions = {
-Vector2i(0, 1): {
-"fade_beats": 0.0,
-"fade_mode": 4,
-"from_time": 1,
-"hold_previous": true,
-"to_time": 0
-}
-}
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
-stream = SubResource("AudioStreamInteractive_nutpd")
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer"]
+stream = ExtResource("1_nutpd")
 volume_db = -30.0
-autoplay = true
-bus = &"Music"
-script = ExtResource("5_faxs0")
