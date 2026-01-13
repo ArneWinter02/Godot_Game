@@ -5,7 +5,11 @@ var speed = 50
 
 var health = 100
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 var damage = 10
+=======
+
+>>>>>>> Stashed changes
 =======
 
 >>>>>>> Stashed changes

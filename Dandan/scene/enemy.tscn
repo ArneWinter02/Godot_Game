@@ -72,9 +72,13 @@ radius = 9.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_144c3"]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 radius = 250.008
 radius = 153.83432
 radius = 76.902534
+=======
+radius = 37.12142
+>>>>>>> Stashed changes
 =======
 radius = 37.12142
 >>>>>>> Stashed changes

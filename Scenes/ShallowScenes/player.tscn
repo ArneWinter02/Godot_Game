@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://c0unbanf4wa0g"]
+[gd_scene load_steps=24 format=3 uid="uid://dphfiqfy8uehx"]
 
 [ext_resource type="Texture2D" uid="uid://b4p8cdu3dsal0" path="res://Bilder/Bilder/Plague_doktor.png" id="1_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://cn21lfo4rqsxy" path="res://MenuScreenFade.tscn" id="3_s8yk7"]
