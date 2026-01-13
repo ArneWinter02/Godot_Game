@@ -22,7 +22,7 @@ func _on_static_body_2d_body_entered(_body: Node2D) -> void:
 
 func _on_timer_timeout() -> void:
 	if checker == 1:
-		get_tree().change_scene_to_file("res://Dandan/scene/Insel.tscn")
+		get_tree().change_scene_to_file("res://")
 
 func update_music_scene():
 	var curMusic = str(curMusicChecker)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://b0edelq78t3rx"]
+[gd_scene load_steps=19 format=4 uid="uid://b0edelq78t3rx"]
 
 [ext_resource type="Texture2D" uid="uid://bjmnikyt888tl" path="res://Bilder/Bilder/Tileset_map.png" id="1_jjvhh"]
 [ext_resource type="Script" uid="uid://dfjklmvwpv61w" path="res://Scripts/main.gd" id="1_kry3j"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://dvgsgouk1wxd3" path="res://Scripts/player.gd" id="3_cg4he"]
 [ext_resource type="Texture2D" uid="uid://cmi2sk3rpe5px" path="res://Bilder/Bilder/Bush_Deko_Tilemap.png" id="3_uptuv"]
 [ext_resource type="PackedScene" uid="uid://b5kakulprxmw2" path="res://Scenes/UserInterface/ui.tscn" id="7_6bp64"]
-[ext_resource type="PackedScene" uid="uid://dpvw7448rmuqh" path="res://Dandan/scene/enemy.tscn" id="7_344ge"]
 [ext_resource type="PackedScene" uid="uid://cn21lfo4rqsxy" path="res://MenuScreenFade.tscn" id="8_joduy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kry3j"]
@@ -119,9 +118,6 @@ metadata/_edit_lock_ = true
 
 [node name="UI" parent="." instance=ExtResource("7_6bp64")]
 
-[node name="敌人" parent="." instance=ExtResource("7_344ge")]
-position = Vector2(332, -103)
-
 [node name="MapTransition" type="Area2D" parent="."]
 position = Vector2(758, 4)
 script = SubResource("GDScript_joduy")
@@ -141,6 +137,10 @@ offset_bottom = 679.0
 
 [node name="Timer" type="Timer" parent="MenuScreenFade"]
 wait_time = 0.1
+
+[node name="BushDekoTilemap" type="Sprite2D" parent="."]
+position = Vector2(-347, 199)
+texture = ExtResource("3_uptuv")
 
 [connection signal="shoot" from="Enteties/Player" to="." method="_on_player_shoot"]
 [connection signal="body_entered" from="MapTransition" to="." method="_on_static_body_2d_body_entered"]
