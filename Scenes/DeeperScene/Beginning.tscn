@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 [gd_scene load_steps=5 format=3 uid="uid://dmukj6big8cmx"]
 
 [ext_resource type="PackedScene" uid="uid://c0unbanf4wa0g" path="res://Scenes/ShallowScenes/player.tscn" id="1_oa8wt"]
 [ext_resource type="Script" path="res://Scenes/DeeperScene/beginning.gd" id="1_opek6"]
+=======
+[gd_scene load_steps=5 format=3 uid="uid://wf2x8rrsaw1l"]
+
+[ext_resource type="PackedScene" uid="uid://c0unbanf4wa0g" path="res://Scenes/ShallowScenes/player.tscn" id="1_oa8wt"]
+[ext_resource type="Script" uid="uid://co6tdsoxw5urp" path="res://Scenes/DeeperScene/beginning.gd" id="1_opek6"]
+>>>>>>> 508983bea21eee21e67791aa09ae1a3e660efc6d
 [ext_resource type="PackedScene" uid="uid://b5kakulprxmw2" path="res://Scenes/UserInterface/ui.tscn" id="2_taqth"]
 [ext_resource type="PackedScene" uid="uid://cn21lfo4rqsxy" path="res://MenuScreenFade.tscn" id="4_7i0s5"]
 

@@ -1,0 +1,71 @@
+[gd_scene load_steps=9 format=3 uid="uid://xnm0hdgfcgrq"]
+
+[ext_resource type="Script" uid="uid://8qd45144y0d4" path="res://Dandan/script/apple_tree.gd" id="1_tnyek"]
+[ext_resource type="Resource" uid="uid://dnijnj1mr66um" path="res://inventory/items/apple.tres" id="2_vjv0o"]
+[ext_resource type="Texture2D" uid="uid://dlm80rnrqe4a1" path="res://Dandan/图片材料/apple, crystal,coin.png.png" id="2_w05rv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjv0o"]
+atlas = ExtResource("2_w05rv")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjhjj"]
+atlas = ExtResource("2_w05rv")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_epo0v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjv0o")
+}],
+"loop": true,
+"name": &"apples",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjhjj")
+}],
+"loop": true,
+"name": &"no apples",
+"speed": 0.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pwjjw"]
+radius = 25.96151
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w05rv"]
+radius = 7.071068
+
+[node name="apple_tree" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_tnyek")
+item = ExtResource("2_vjv0o")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-9.536743e-07, -9.536743e-07)
+scale = Vector2(0.49047852, 0.44970703)
+sprite_frames = SubResource("SpriteFrames_epo0v")
+animation = &"apples"
+
+[node name="pickable_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickable_area"]
+shape = SubResource("CircleShape2D_pwjjw")
+
+[node name="grow_time" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="Marker2D" type="Marker2D" parent="."]
+
+[node name="collision" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collision"]
+position = Vector2(2, 7)
+shape = SubResource("CircleShape2D_w05rv")
+
+[connection signal="body_entered" from="pickable_area" to="." method="_on_pickable_area_body_entered"]
+[connection signal="body_exited" from="pickable_area" to="." method="_on_pickable_area_body_exited"]
+[connection signal="timeout" from="grow_time" to="." method="_on_grow_time_timeout"]
