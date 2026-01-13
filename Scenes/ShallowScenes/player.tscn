@@ -37,7 +37,7 @@ func animation():
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ik7gq"]
-size = Vector2(2.75, 6.84375)
+size = Vector2(3.375, 7.421875)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5rpka"]
 atlas = ExtResource("1_cvnsp")
@@ -191,6 +191,7 @@ platform_floor_layers = 4294901811
 script = SubResource("GDScript_vgqql")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.3125, -0.2890625)
 shape = SubResource("RectangleShape2D_ik7gq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
