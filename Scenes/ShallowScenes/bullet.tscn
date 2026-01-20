@@ -1,18 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvqmxgssyakwb"]
+[gd_scene load_steps=5 format=3 uid="uid://dvqmxgssyakwb"]
 
 [ext_resource type="Script" uid="uid://cpy151ed30dpd" path="res://Scripts/bullet.gd" id="1_41ubq"]
 [ext_resource type="Texture2D" uid="uid://di0e4xnpjlske" path="res://Bilder/Bilder/kugel.png" id="2_ygsnr"]
+[ext_resource type="PackedScene" uid="uid://xfbnk5g2f1pp" path="res://Scenes/ShallowScenes/hitbox.tscn" id="3_mfqck"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ycag2"]
-size = Vector2(2, 1.5)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_okk17"]
+size = Vector2(5.3076925, 5)
 
-[node name="Bullet" type="Area2D"]
+[node name="Bullet" type="Area2D" groups=["attack"]]
+top_level = true
+light_mask = 4
+visibility_layer = 4
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_41ubq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+position = Vector2(5.4999995, 3.5000002)
+scale = Vector2(0.75, 0.75)
 texture = ExtResource("2_ygsnr")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.25)
-shape = SubResource("RectangleShape2D_ycag2")
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+
+[node name="Hitbox" parent="." instance=ExtResource("3_mfqck")]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(0.275, -0.75)
+scale = Vector2(0.65, 0.5)
+shape = SubResource("RectangleShape2D_okk17")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="Hitbox"]

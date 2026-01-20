@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://b0edelq78t3rx"]
+[gd_scene load_steps=23 format=4 uid="uid://b0edelq78t3rx"]
 
 [ext_resource type="Texture2D" uid="uid://bjmnikyt888tl" path="res://Bilder/Bilder/Tileset_map.png" id="1_jjvhh"]
 [ext_resource type="Script" uid="uid://dfjklmvwpv61w" path="res://Scripts/main.gd" id="1_kry3j"]
@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://cmi2sk3rpe5px" path="res://Bilder/Bilder/Bush_Deko_Tilemap.png" id="3_uptuv"]
 [ext_resource type="PackedScene" uid="uid://b5kakulprxmw2" path="res://Scenes/UserInterface/ui.tscn" id="7_6bp64"]
 [ext_resource type="PackedScene" uid="uid://cn21lfo4rqsxy" path="res://MenuScreenFade.tscn" id="8_joduy"]
+[ext_resource type="PackedScene" uid="uid://c5ko3ee7hlkrm" path="res://Scenes/ShallowScenes/Spawner.tscn" id="8_rusth"]
+[ext_resource type="Script" uid="uid://bum422lrbyv46" path="res://Scripts/Spawn_Info.gd" id="9_rusth"]
+[ext_resource type="PackedScene" uid="uid://cx5h32uy8dv4j" path="res://Scenes/ShallowScenes/EnemySpawner.tscn" id="10_rldox"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kry3j"]
 texture = ExtResource("1_jjvhh")
@@ -49,6 +52,14 @@ script/source = "extends Area2D
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rusth"]
 size = Vector2(20, 60)
 
+[sub_resource type="Resource" id="Resource_rldox"]
+script = ExtResource("9_rusth")
+time_end = 10
+enemy = ExtResource("10_rldox")
+enemy_num = 1
+enemy_spawn_delay = 1
+metadata/_custom_type_script = "uid://bum422lrbyv46"
+
 [node name="Intro" type="Node2D"]
 position = Vector2(624, -4)
 script = ExtResource("1_kry3j")
@@ -70,12 +81,6 @@ region_rect = Rect2(76, 10, 44, 42)
 
 [node name="Enteties" type="Node2D" parent="."]
 position = Vector2(-8, 15)
-
-[node name="Player" parent="Enteties" instance=ExtResource("2_ncryd")]
-position = Vector2(-755, 0)
-scale = Vector2(2, 2)
-collision_layer = 3
-script = ExtResource("3_cg4he")
 
 [node name="Bullets" type="Node2D" parent="."]
 position = Vector2(-8, 15)
@@ -128,20 +133,34 @@ texture = SubResource("ImageTexture_joduy")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MapTransition"]
 shape = SubResource("RectangleShape2D_rusth")
 
-[node name="MenuScreenFade" parent="." instance=ExtResource("8_joduy")]
-visible = false
-offset_left = -1075.0
-offset_top = -638.0
-offset_right = 1119.0
-offset_bottom = 679.0
-
-[node name="Timer" type="Timer" parent="MenuScreenFade"]
-wait_time = 0.1
-
 [node name="BushDekoTilemap" type="Sprite2D" parent="."]
 position = Vector2(-347, 199)
 texture = ExtResource("3_uptuv")
 
-[connection signal="shoot" from="Enteties/Player" to="." method="_on_player_shoot"]
+[node name="EnemySpawner" parent="." instance=ExtResource("8_rusth")]
+spawns = Array[ExtResource("9_rusth")]([SubResource("Resource_rldox")])
+
+[node name="Player" parent="." instance=ExtResource("2_ncryd")]
+position = Vector2(-723, 8)
+scale = Vector2(2, 2)
+script = ExtResource("3_cg4he")
+
+[node name="MenuScreenFade" parent="." instance=ExtResource("8_joduy")]
+visible = false
+offset_left = -1271.0
+offset_top = -852.0
+offset_right = 1388.0
+offset_bottom = 907.0
+
+[node name="ScreenFadeTimer" type="Timer" parent="MenuScreenFade"]
+one_shot = true
+
 [connection signal="body_entered" from="MapTransition" to="." method="_on_static_body_2d_body_entered"]
-[connection signal="timeout" from="MenuScreenFade/Timer" to="." method="_on_timer_timeout"]
+[connection signal="shoot" from="Player" to="." method="_on_player_shoot"]
+[connection signal="timeout" from="MenuScreenFade/ScreenFadeTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="MenuScreenFade/ScreenFadeTimer" to="." method="_on_screen_fade_timer_timeout"]
+
+[editable path="EnemySpawner"]
+[editable path="Player"]
+[editable path="Player/Hurtbox"]
+[editable path="Player/Node2D"]

@@ -1,16 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://b32h5x6mjro2a"]
+[gd_scene load_steps=2 format=3 uid="uid://xfbnk5g2f1pp"]
 
-[ext_resource type="Texture2D" uid="uid://cvimjncxp1n28" path="res://Bilder/Items/Magazine.png" id="1_ba7ss"]
+[ext_resource type="Script" uid="uid://248pl65cnntb" path="res://Scripts/Stats für Spieler und Gegner/hitbox.gd" id="1_ba7ss"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_856n4"]
-
-[node name="hitbox" type="Area2D"]
+[node name="Hitbox" type="Area2D" groups=["attack"]]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_ba7ss")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_856n4")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="disablehitboxtimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
 
-[node name="Magazine" type="Sprite2D" parent="."]
-position = Vector2(52, -21)
-texture = ExtResource("1_ba7ss")
+[connection signal="timeout" from="disablehitboxtimer" to="." method="_on_disablehitboxtimer_timeout"]
