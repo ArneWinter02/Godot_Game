@@ -22,7 +22,14 @@ func _on_area_entered(area: Area2D):
 					if area.has_method("tempdisabled"):
 						area.tempdisable()
 			var damage = area.damage
+			var angle = Vector2.ZERO
+#			if not area.get("angle") == 0:
+#				angle = area.angle
+#			if not area.get("knock_amount") == null:
+#				knock = area.knock_amount
 			emit_signal("hurt",damage)
+			if area.has_method("enemy_hit"):
+				area.enemy_hit(1)
 
 func _on_disable_timer_timeout():
 	collision.call_deferred("set","disalbed", false)

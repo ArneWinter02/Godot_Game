@@ -1,9 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b32h5x6mjro2a"]
+[gd_scene load_steps=2 format=3 uid="uid://b32h5x6mjro2a"]
 
 [ext_resource type="Script" uid="uid://c4nb64mhvrx0i" path="res://Scripts/Stats für Spieler und Gegner/hurtbox.gd" id="1_lx2kf"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_856n4"]
-size = Vector2(3, 8)
 
 [node name="Hurtbox" type="Area2D"]
 collision_layer = 0
@@ -11,7 +8,6 @@ collision_mask = 0
 script = ExtResource("1_lx2kf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_856n4")
 
 [node name="DisableTimer" type="Timer" parent="."]
 wait_time = 0.5

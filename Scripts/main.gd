@@ -5,7 +5,8 @@ var checker = 0
 var curMusicChecker: String
 
 func _ready() -> void:
-	pass
+	$MenuScreenFade.show()
+	$MenuScreenFade/AnimationTree.play("fade_out")
 
 func _process(_delta: float) -> void:
 	if curMusicChecker != Global.musicChecker:
@@ -13,7 +14,12 @@ func _process(_delta: float) -> void:
 		update_music_scene()
 		BackroundMusic.audio_stream_player.play()
 
-func _on_static_body_2d_body_entered(_body: Node2D) -> void:
+func update_music_scene():
+	var curMusic = str(curMusicChecker)
+	BackroundMusic.audio_stream_player["parameters/switch_to_clip"] = curMusic
+
+
+func _on_map_transition_body_entered(body: Node2D) -> void:
 	checker = 1
 	entered = true
 	if entered == true:
@@ -21,9 +27,6 @@ func _on_static_body_2d_body_entered(_body: Node2D) -> void:
 		$MenuScreenFade/ScreenFadeTimer.start()
 		$MenuScreenFade/AnimationTree.play("fade_in")
 
-func update_music_scene():
-	var curMusic = str(curMusicChecker)
-	BackroundMusic.audio_stream_player["parameters/switch_to_clip"] = curMusic
 
 func _on_screen_fade_timer_timeout() -> void:
 	if checker == 1:

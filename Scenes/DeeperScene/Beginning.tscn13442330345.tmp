@@ -1,9 +1,8 @@
-[gd_scene load_steps=27 format=4 uid="uid://wf2x8rrsaw1l"]
+[gd_scene load_steps=26 format=4 uid="uid://wf2x8rrsaw1l"]
 
 [ext_resource type="PackedScene" uid="uid://c0unbanf4wa0g" path="res://Scenes/ShallowScenes/player.tscn" id="1_oa8wt"]
 [ext_resource type="Script" uid="uid://co6tdsoxw5urp" path="res://Scenes/DeeperScene/beginning.gd" id="1_opek6"]
 [ext_resource type="PackedScene" uid="uid://b5kakulprxmw2" path="res://Scenes/UserInterface/ui.tscn" id="2_taqth"]
-[ext_resource type="PackedScene" uid="uid://cn21lfo4rqsxy" path="res://Scenes/UserInterface/MenuScreenFade.tscn" id="4_7i0s5"]
 [ext_resource type="Material" uid="uid://cmbcfxlkxxnwq" path="res://addons/TileMapDual/ghost_material.tres" id="5_fde6h"]
 [ext_resource type="Script" uid="uid://cjk8nronimk5r" path="res://addons/TileMapDual/tile_map_dual.gd" id="6_g6r66"]
 [ext_resource type="Texture2D" uid="uid://bu2ypscxchp6m" path="res://Bilder/Bilder/Strand_Tileset.png" id="7_i3tni"]
@@ -277,7 +276,7 @@ metadata/_edit_lock_ = true
 position = Vector2(680, -45)
 
 [node name="CollisionShape2D" parent="Tilemaps/Übergang_Tiles/Deko/Deko_Collision/Nadel" index="0"]
-position = Vector2(54, 79)
+position = Vector2(92, -11)
 
 [node name="CollisionShape2D2" parent="Tilemaps/Übergang_Tiles/Deko/Deko_Collision/Nadel" index="1"]
 position = Vector2(85, -37)
@@ -298,7 +297,7 @@ position = Vector2(74, -261)
 position = Vector2(74, -219)
 
 [node name="CollisionShape2D8" parent="Tilemaps/Übergang_Tiles/Deko/Deko_Collision/Nadel" index="7"]
-position = Vector2(48, -166)
+position = Vector2(-32, -220)
 
 [node name="CollisionShape2D5" parent="Tilemaps/Übergang_Tiles/Deko/Deko_Collision/Baum" index="0"]
 position = Vector2(74, 196)
@@ -331,7 +330,7 @@ position = Vector2(50, 0)
 position = Vector2(599, 173)
 
 [node name="CollisionShape2D2" parent="Tilemaps/Übergang_Tiles/Deko/Deko_Collision2/Nadel" index="1"]
-position = Vector2(689, -326)
+position = Vector2(469, -420)
 
 [node name="CollisionShape2D3" parent="Tilemaps/Übergang_Tiles/Deko/Deko_Collision2/Nadel" index="2"]
 position = Vector2(481, 377)
@@ -379,42 +378,29 @@ position = Vector2(705, 8)
 position = Vector2(1, 0)
 spawns = Array[ExtResource("12_alt6u")]([SubResource("Resource_2yjik")])
 
+[node name="Map_Limitations" parent="." instance=ExtResource("13_alt6u")]
+position = Vector2(-6, -379)
+
+[node name="CollisionPolygon2D" parent="Map_Limitations" index="0"]
+polygon = PackedVector2Array(-4, -3, 208, -67, 755, -69, 785, -34, 786, 828, 193, 826, 49, 823, -54, 758, -145, 533, -135, 327, -75, 98, -19, 6, -96, -63, -231, 233, -270, 725, -130, 868, 215, 928, 760, 938, 895, 876, 892.6078, 368.86395, 892, 240, 874, -167, 584, -201, 109, -138, -34, -79, -19, 5)
+metadata/_edit_lock_ = true
+
 [node name="Map_Transition" parent="." instance=ExtResource("16_6vlrc")]
 position = Vector2(751, -57)
-
-[node name="CollisionShape2D" parent="Map_Transition" index="0"]
-position = Vector2(3, -3.5)
 
 [node name="Player" parent="." instance=ExtResource("1_oa8wt")]
 top_level = true
 position = Vector2(-54, -55)
-collision_layer = 17
-collision_mask = 17
 
 [node name="Camera2D" parent="Player" index="4"]
 limit_right = 767
 
-[node name="MenuScreenFade" parent="." instance=ExtResource("4_7i0s5")]
-visible = false
-offset_left = -461.0
-offset_top = -475.0
-offset_right = -19.0
-offset_bottom = -195.0
-
-[node name="Map_Limitations" parent="." instance=ExtResource("13_alt6u")]
-position = Vector2(-138, -62)
-
-[node name="CollisionPolygon2D" parent="Map_Limitations" index="0"]
-polygon = PackedVector2Array(2, 0, 15, 156, 45, 259, 87, 428, 142, 491, 254, 526, 415, 537, 878, 534, 876, 374, 871, 274, 880, 172, 877, 55, 908, 51, 908, -37, 877, -39, 875, -134, 875, -394, 419, -393, 175, -359, 28, -249, 6, -40, -66, -40, -16, -341, 208, -445, 904, -451, 923, -222, 957, 437, 943, 570, 553, 647, 129, 593, -24, 143, -52, -5, -65, -39, 5, -39)
-
 [connection signal="body_entered" from="Map_Transition" to="." method="_on_map_transition_body_entered"]
-[connection signal="timeout" from="MenuScreenFade/ScreenFadeTimer" to="." method="_on_screen_fade_timer_timeout"]
 
 [editable path="Tilemaps/Übergang_Tiles/Deko/Deko_Collision"]
 [editable path="Tilemaps/Übergang_Tiles/Deko/Deko_Collision2"]
+[editable path="Map_Limitations"]
 [editable path="Map_Transition"]
 [editable path="Player"]
 [editable path="Player/Hurtbox"]
 [editable path="Player/Node2D"]
-[editable path="MenuScreenFade"]
-[editable path="Map_Limitations"]

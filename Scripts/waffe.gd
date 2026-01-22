@@ -5,7 +5,7 @@ const bullet_scene = preload("res://Scenes/ShallowScenes/bullet.tscn")
 @onready var marker_2d: Marker2D = $Marker2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
-var waffenlevel = 1
+
 var max_fire_rate: float = 0.20
 var cur_fire_rate = max_fire_rate
 var max_ammo: int = 10
@@ -15,7 +15,7 @@ var cur_ammo: = max_ammo
 func reload():
 	$reload.start()
 	cur_ammo = max_ammo
-	attack()
+
 func shoot():
 	if not $reload.is_stopped():
 		return
@@ -25,10 +25,7 @@ func shoot():
 	bullet_instance.global_position = marker_2d.global_position
 	bullet_instance.rotation = rotation
 	$fire_rate.start(0.25 - cur_fire_rate)
-	
-func attack():
-	if waffenlevel > 0:
-		pass
+
 func _physics_process(_delta: float) -> void:
 	look_at(get_global_mouse_position())
 	rotation_degrees = wrap(rotation_degrees, 0, 360)

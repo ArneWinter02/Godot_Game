@@ -150,6 +150,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 
 [node name="TextureRect6" type="TextureRect" parent="Control2/Button Container/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 texture = SubResource("AtlasTexture_eit4r")
@@ -179,6 +180,7 @@ popup/item_1/id = 1
 popup/item_2/id = 2
 
 [node name="TextureRect" type="TextureRect" parent="Control2/Button Container/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 texture = SubResource("AtlasTexture_eit4r")
@@ -212,6 +214,7 @@ texture_pressed = SubResource("AtlasTexture_pv48h")
 texture_hover = SubResource("AtlasTexture_7t2bd")
 
 [node name="TextureRect3" type="TextureRect" parent="Control2/Button Container/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 texture = SubResource("AtlasTexture_eit4r")

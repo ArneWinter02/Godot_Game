@@ -53,6 +53,7 @@ _data = {
 }
 
 [node name="MenuScreenFade" type="ColorRect"]
+top_level = true
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -68,3 +69,7 @@ color = Color(0, 0, 0, 1)
 libraries = {
 &"": SubResource("AnimationLibrary_gcgm5")
 }
+
+[node name="ScreenFadeTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true

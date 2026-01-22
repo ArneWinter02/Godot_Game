@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfi4byf3j0j05"]
+
+[ext_resource type="Script" uid="uid://dyfi5qlox4tlf" path="res://Scenes/ShallowScenes/map_transistor.gd" id="1_gps41"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ihkde"]
+size = Vector2(24.5, 77)
+
+[node name="Map_Transition" type="Area2D"]
+collision_layer = 16
+collision_mask = 16
+script = ExtResource("1_gps41")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ihkde")

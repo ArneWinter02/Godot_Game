@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvqmxgssyakwb"]
+[gd_scene load_steps=6 format=3 uid="uid://dvqmxgssyakwb"]
 
 [ext_resource type="Script" uid="uid://cpy151ed30dpd" path="res://Scripts/bullet.gd" id="1_41ubq"]
 [ext_resource type="Texture2D" uid="uid://di0e4xnpjlske" path="res://Bilder/Bilder/kugel.png" id="2_ygsnr"]
 [ext_resource type="PackedScene" uid="uid://xfbnk5g2f1pp" path="res://Scenes/ShallowScenes/hitbox.tscn" id="3_mfqck"]
+[ext_resource type="AudioStream" uid="uid://d3goldq8cm3ui" path="res://assets/SFX/sniper-rifle-firing.mp3" id="4_okk17"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okk17"]
 size = Vector2(5.3076925, 5)
@@ -14,11 +15,6 @@ visibility_layer = 4
 collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_41ubq")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(5.4999995, 3.5000002)
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("2_ygsnr")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.0
@@ -32,6 +28,19 @@ position = Vector2(0.275, -0.75)
 scale = Vector2(0.65, 0.5)
 shape = SubResource("RectangleShape2D_okk17")
 
+[node name="Sprite2D" type="Sprite2D" parent="Hitbox"]
+position = Vector2(5.4999995, 3.5000002)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_ygsnr")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_okk17")
+volume_db = -20.0
+pitch_scale = 5.0
+autoplay = true
+bus = &"SFX"
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 
 [editable path="Hitbox"]

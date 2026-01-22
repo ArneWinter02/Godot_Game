@@ -2,7 +2,7 @@ extends Area2D
 
 var speed: int = 400
 var level: int
-var hp=1
+var hp = 1.0
 var damage = 10
 var knock_amount = 100
 var attack_size = 1.0
@@ -13,9 +13,11 @@ var angle = Vector2.ZERO
 
 
 func _ready():
+	angle = global_position.direction_to(target)
+	rotation = angle.angle() + deg_to_rad(135)
 	match level:
 		1:
-			hp = 1
+			hp = 1.0
 			speed = 400
 			damage = 10
 			knock_amount = 100
@@ -23,12 +25,5 @@ func _ready():
 
 func _physics_process(delta: float) -> void:
 	position += transform.x * speed * delta
-func enemy_hit(charge = 1):
-	hp-=charge
-	if hp <= 0:
-		queue_free()
-	
-
-
 func _on_timer_timeout() -> void:
 	queue_free()

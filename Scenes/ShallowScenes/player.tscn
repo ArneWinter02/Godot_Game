@@ -1,7 +1,6 @@
 [gd_scene load_steps=25 format=3 uid="uid://c0unbanf4wa0g"]
 
 [ext_resource type="Texture2D" uid="uid://b4p8cdu3dsal0" path="res://Bilder/Bilder/Plague_doktor.png" id="1_cvnsp"]
-[ext_resource type="PackedScene" uid="uid://cn21lfo4rqsxy" path="res://MenuScreenFade.tscn" id="3_s8yk7"]
 [ext_resource type="PackedScene" uid="uid://b32h5x6mjro2a" path="res://Scenes/ShallowScenes/Hurtbox.tscn" id="4_1nc73"]
 [ext_resource type="PackedScene" uid="uid://o7qc7uhlib0y" path="res://Scenes/ShallowScenes/Waffe.tscn" id="4_vgqql"]
 
@@ -17,9 +16,7 @@ signal shoot(_pos: Vector2, dir: Vector2)
 @onready var animated_sprite = $AnimatedSprite2D
 
 func _ready() -> void:
-	$Camera2D/MenuScreenFade.show()
-	$Camera2D/MenuScreenFade/AnimationTree.play(\"fade_out\")
-
+	pass
 
 func _physics_process(_float):
 	direction = Input.get_vector(\"left\", \"right\", \"up\", \"down\")
@@ -195,9 +192,13 @@ animations = [{
 "speed": 1.5
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ttdi"]
+size = Vector2(4.5, 8)
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-platform_floor_layers = 4294901761
-platform_wall_layers = 1
+scale = Vector2(2, 2)
+platform_floor_layers = 4294901777
+platform_wall_layers = 17
 script = SubResource("GDScript_vgqql")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -220,7 +221,9 @@ collision_mask = 2
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(0.5, -1)
+position = Vector2(0.25, -0.5)
+shape = SubResource("RectangleShape2D_2ttdi")
+debug_color = Color(7.219613e-08, 0.20953652, 0.2507157, 0.41960785)
 
 [node name="Node2D" parent="." instance=ExtResource("4_vgqql")]
 position = Vector2(0.5, -0.5)
@@ -234,13 +237,6 @@ limit_right = 1420
 limit_bottom = 450
 position_smoothing_enabled = true
 position_smoothing_speed = 20.0
-
-[node name="MenuScreenFade" parent="Camera2D" instance=ExtResource("3_s8yk7")]
-visible = false
-offset_left = -1133.0
-offset_top = -880.0
-offset_right = 1299.0
-offset_bottom = 779.0
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 

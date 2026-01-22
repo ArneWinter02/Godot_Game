@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.5", "Forward Plus")
 
 Global="*res://Scripts/Stats für Spieler und Gegner/Global.gd"
 BackroundMusic="*res://Scenes/UserInterface/Backround_Music.tscn"
+Bullet="res://Scripts/bullet.gd"
 
 [display]
 

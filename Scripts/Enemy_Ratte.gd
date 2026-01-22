@@ -14,7 +14,7 @@ func _physics_process(_delta: float) -> void:
 		animated_sprite_2d.flip_h = direction.x < 0
 
 
-func _on_hurtbox_hurt(damage):
+func _on_hurtbox_hurt(damage: Variant) -> void:
 	healthpoints -= damage
 	if healthpoints <= 0:
 		queue_free()

@@ -1,9 +1,8 @@
-[gd_scene load_steps=25 format=4 uid="uid://b0edelq78t3rx"]
+[gd_scene load_steps=24 format=4 uid="uid://b0edelq78t3rx"]
 
 [ext_resource type="Script" uid="uid://dfjklmvwpv61w" path="res://Scripts/main.gd" id="1_kry3j"]
 [ext_resource type="PackedScene" uid="uid://c0unbanf4wa0g" path="res://Scenes/ShallowScenes/player.tscn" id="2_ncryd"]
 [ext_resource type="Texture2D" uid="uid://d177gdhawyvf2" path="res://Bilder/Bilder/Standardgras_Tile.png" id="3_d1ssd"]
-[ext_resource type="PackedScene" uid="uid://ogwns5datvxm" path="res://Scenes/ShallowScenes/deko_collision.tscn" id="4_d1ssd"]
 [ext_resource type="Texture2D" uid="uid://bu2ypscxchp6m" path="res://Bilder/Bilder/Strand_Tileset.png" id="4_rldox"]
 [ext_resource type="PackedScene" uid="uid://b5kakulprxmw2" path="res://Scenes/UserInterface/ui.tscn" id="7_6bp64"]
 [ext_resource type="PackedScene" uid="uid://cn21lfo4rqsxy" path="res://Scenes/UserInterface/MenuScreenFade.tscn" id="8_joduy"]
@@ -207,57 +206,6 @@ position = Vector2(-59, 11)
 tile_map_data = PackedByteArray("AADj/wwAAAAEAAEAAADo/w0AAAAEAAEAAADp/woAAAAFAAAAAADY//X/AAADAAAAAADX//7/AAAEAAEAAADW/wcAAAAEAAEAAADl//v/AAAFAAAAAADc//f/AAAEAAEAAADg/wQAAAAEAAEAAADh//n/AAAFAAAAAADY/+z/AAAAAAAAAADk/+n/AAAEAAEAAADU/+b/AAAEAAEAAADf/+3/AAAEAAEAAADT//D/AAAEAAEAAADb/w4AAAAEAAEAAADT/xUAAAAEAAEAAADT/wsAAAAEAAEAAADi/xUAAAAEAAEAAADY/xcAAAAEAAEAAADd/xIAAAAEAAEAAADc/wgAAAAEAAEAAADv/wQAAAAEAAEAAADh/xYAAAAAAAAAAADY/xEAAAAAAAAAAADm/xAAAAAAAAAAAADW/xYAAAAAAAAAAADR/xkAAAAAAAAAAADS/w8AAAAAAAAAAADY/xAAAAAAAAAAAADV/wQAAAAAAAAAAADb/wgAAAAAAAAAAADQ/wYAAAAAAAAAAADp//j/AAAAAAAAAADg//X/AAAAAAAAAADg//7/AAAAAAAAAADY//j/AAAAAAAAAADV//b/AAAAAAAAAADf//D/AAAAAAAAAADX/+7/AAAAAAAAAADS/+r/AAAAAAAAAADf/+b/AAAAAAAAAADZ/+X/AAAAAAAAAADe/+3/AAAAAAAAAAD3//7/AAAAAAAAAAD6/wsAAAAAAAAAAADy/xMAAAAAAAAAAADs/wwAAAAAAAAAAADw/xQAAAAAAAAAAADs/xcAAAAAAAAAAADz/wsAAAAAAAAAAADq/wMAAAAAAAAAAADk/wEAAAAAAAAAAADj/wcAAAAAAAAAAADz//T/AAAAAAAAAADv/+v/AAAAAAAAAADq/+7/AAAAAAAAAADy//j/AAAFAAIAAADs//P/AAAAAAAAAAD5/+3/AAAAAAAAAAACAOr/AAAAAAAAAAD4/+f/AAAAAAAAAAAJAOv/AAAAAAAAAAAPAPL/AAAAAAAAAAAIAP7/AAAAAAAAAAD+//P/AAAAAAAAAAAaAO3/AAAAAAAAAAAmAPP/AAAAAAAAAAAUAOn/AAAAAAAAAAAjAOz/AAAAAAAAAAAZAPz/AAAFAAAAAAANAAoAAAAAAAAAAAD+/xIAAAAAAAAAAAAHAAMAAAAAAAAAAAD+/wIAAAAAAAAAAAD2/wQAAAAAAAAAAAAIAPn/AAAAAAAAAAD9//j/AAAAAAAAAAD9//v/AAAAAAAAAAADAPz/AAAAAAAAAADv/xwAAAADAAAAAADn/xQAAAADAAAAAAD4/xMAAAADAAAAAADj/xgAAAADAAAAAADZ/xUAAAADAAAAAADZ/wsAAAADAAAAAADS/wwAAAADAAAAAADR/xEAAAADAAAAAADl/wQAAAADAAAAAADc//v/AAADAAAAAADn//H/AAADAAAAAADx/+z/AAADAAAAAAD1/+z/AAADAAAAAAD6//L/AAADAAAAAADm/+3/AAADAAAAAADp/+r/AAADAAAAAADV/+n/AAADAAAAAADl/+j/AAADAAAAAADd/+j/AAADAAAAAADz//7/AAADAAAAAADs/wYAAAADAAAAAADq//j/AAADAAAAAADT//3/AAADAAAAAADo/wEAAAADAAAAAADX/wEAAAADAAAAAADV//n/AAADAAAAAAAAABIAAAADAAAAAAADAAYAAAADAAAAAAD3/wcAAAADAAAAAAALAAkAAAADAAAAAAAMABIAAAADAAAAAAD7/wgAAAADAAAAAAAUAPL/AAADAAAAAAAFAO//AAADAAAAAAAPAPb/AAADAAAAAAAIAPD/AAADAAAAAAAQAOf/AAADAAAAAAAdAOf/AAADAAAAAAAkAOv/AAADAAAAAAAsAOr/AAADAAAAAAAnAPb/AAADAAAAAAAcAPv/AAADAAAAAAAlAAYAAAADAAAAAAAUAAEAAAADAAAAAAAbAAsAAAADAAAAAAAkABYAAAADAAAAAAAtABAAAAADAAAAAAAsABAAAAADAAAAAAAaABEAAAADAAAAAAAUABcAAAADAAAAAAAhABIAAAADAAAAAAAjAA8AAAADAAAAAAAJABIAAAAEAAAAAAAdAA4AAAAEAAAAAAAEABEAAAAEAAAAAAAEABkAAAAEAAAAAAAWABIAAAAEAAAAAAAGAAwAAAAEAAAAAADr/xIAAAAEAAAAAADw//z/AAAEAAAAAAD///b/AAAEAAAAAAALAPT/AAAEAAAAAAD//wUAAAAEAAAAAAD2//7/AAAEAAAAAADw/+3/AAAEAAAAAADj/+b/AAAEAAAAAADb/+7/AAAEAAAAAADo//P/AAAEAAAAAADY//T/AAAEAAAAAADY/wQAAAAEAAAAAADX/w0AAAAEAAAAAADh/xEAAAAEAAAAAADV/xUAAAAEAAAAAADf/wQAAAAEAAAAAADZ/wQAAAAFAAAAAADu//L/AAAFAAAAAAAEAO//AAAFAAAAAAACAAUAAAAFAAAAAAATABAAAAAFAAAAAAAFABgAAAAFAAAAAAAQAA8AAAAFAAAAAAAYAAUAAAAFAAAAAAAGAP//AAAFAAAAAAD5//D/AAAFAAAAAAD2/wkAAAAFAAAAAADs/w8AAAAFAAAAAADr/xEAAAAFAAAAAADy//r/AAAFAAAAAADl//T/AAAFAAAAAADb//H/AAAFAAAAAADa////AAAFAAAAAADW/wsAAAAFAAAAAADn/xMAAAAFAAAAAAD6/xQAAAAFAAAAAAAJAA8AAAAFAAAAAAAUAAYAAAAFAAAAAAAfAP//AAAFAAAAAAAiAPb/AAAFAAAAAAAqAAQAAAAFAAAAAAAtABMAAAAFAAAAAAAsABMAAAAFAAAAAAAnABQAAAAFAAEAAAApAAgAAAAFAAEAAAAwAAcAAAAFAAEAAAAYAAYAAAAFAAEAAAAkAPb/AAAFAAEAAAAvAPP/AAAFAAEAAAAaAPH/AAAFAAEAAAAiAPn/AAAFAAEAAAAlAOv/AAAFAAEAAAAdAOn/AAAFAAEAAAAqAOX/AAAFAAEAAAATAOn/AAAFAAEAAAAWAPD/AAAFAAEAAAAIAOv/AAAFAAEAAAAYAPb/AAAFAAEAAAAVAPX/AAAFAAEAAAAPAOb/AAAFAAEAAAAMAPT/AAAFAAEAAAAMAPz/AAAFAAEAAAABAPH/AAAFAAEAAAD2/+z/AAAFAAEAAAAGAOf/AAAFAAEAAAD5/+j/AAAFAAEAAADu/+b/AAAFAAEAAAD0/w0AAAAFAAIAAAALAAUAAAAFAAIAAAAAAO//AAAFAAIAAAAWAOr/AAAFAAIAAAAZAOb/AAAFAAIAAAAaAOj/AAAFAAIAAAAgAPz/AAAFAAIAAAAHAP7/AAAFAAIAAAAlAAwAAAAFAAIAAAAqAPP/AAAEAAEAAAAdAO//AAAEAAEAAAAoAPX/AAAEAAEAAAAjAPv/AAAEAAEAAAAgAPH/AAAEAAEAAAAqAOv/AAAEAAEAAAAcAOb/AAAEAAEAAAAlAOb/AAAEAAEAAAAmAAgAAAAEAAEAAAAdAAYAAAAEAAEAAAAlABQAAAAEAAEAAAARABUAAAAEAAEAAAAOAAkAAAAEAAEAAAARAAMAAAAEAAEAAAARAAIAAAAEAAEAAAAKAPr/AAAEAAEAAAAUAPb/AAAEAAEAAAAlAPj/AAAEAAEAAAD5////AAADAAAAAAD5/wIAAAADAAAAAAD5/wAAAAAAAAAAAAD5/wEAAAAAAAAAAAD7//7/AAAAAAAAAAD7/wIAAAAEAAEAAAD6//7/AAAFAAEAAAA=")
 tile_set = SubResource("TileSet_jdpqb")
 
-[node name="Deko_Collision" parent="Tilemaps/TileMapLayer2/TileMapLayer" instance=ExtResource("4_d1ssd")]
-position = Vector2(438, -63)
-
-[node name="CollisionShape2D" parent="Tilemaps/TileMapLayer2/TileMapLayer/Deko_Collision/Nadel" index="0"]
-position = Vector2(-468, 193)
-
-[node name="CollisionShape2D2" parent="Tilemaps/TileMapLayer2/TileMapLayer/Deko_Collision/Nadel" index="1"]
-position = Vector2(-26, 385)
-
-[node name="CollisionShape2D3" parent="Tilemaps/TileMapLayer2/TileMapLayer/Deko_Collision/Nadel" index="2"]
-position = Vector2(251, -70)
-
-[node name="CollisionShape2D4" parent="Tilemaps/TileMapLayer2/TileMapLayer/Deko_Collision/Nadel" index="3"]
-position = Vector2(221, 345)
-
-[node name="CollisionShape2D5" parent="Tilemaps/TileMapLayer2/TileMapLayer/Deko_Collision/Nadel" index="4"]
-position = Vector2(114, -277)
-
-[node name="CollisionShape2D6" parent="Tilemaps/TileMapLayer2/TileMapLayer/Deko_Collision/Nadel" index="5"]
-position = Vector2(-155, 12)
-
-[node name="CollisionShape2D7" parent="Tilemaps/TileMapLayer2/TileMapLayer/Deko_Collision/Nadel" index="6"]
-position = Vector2(-439, -317)
-
-[node name="CollisionShape2D8" parent="Tilemaps/TileMapLayer2/TileMapLayer/Deko_Collision/Nadel" index="7"]
-position = Vector2(-347, -104)
-
-[node name="CollisionShape2D5" parent="Tilemaps/TileMapLayer2/TileMapLayer/Deko_Collision/Baum" index="0"]
-position = Vector2(-442, 336)
-
-[node name="CollisionShape2D" parent="Tilemaps/TileMapLayer2/TileMapLayer/Deko_Collision/Baum" index="1"]
-position = Vector2(-196, 245)
-
-[node name="CollisionShape2D2" parent="Tilemaps/TileMapLayer2/TileMapLayer/Deko_Collision/Baum" index="2"]
-position = Vector2(513, 140)
-
-[node name="CollisionShape2D3" parent="Tilemaps/TileMapLayer2/TileMapLayer/Deko_Collision/Baum" index="3"]
-position = Vector2(380, -252)
-
-[node name="CollisionShape2D4" parent="Tilemaps/TileMapLayer2/TileMapLayer/Deko_Collision/Baum" index="4"]
-position = Vector2(-224, -224)
-
-[node name="CollisionShape2D6" parent="Tilemaps/TileMapLayer2/TileMapLayer/Deko_Collision/Baum" index="5"]
-position = Vector2(93, 49)
-
-[node name="CollisionShape2D7" parent="Tilemaps/TileMapLayer2/TileMapLayer/Deko_Collision/Baum" index="6"]
-position = Vector2(826, 163)
-
-[node name="CollisionShape2D8" parent="Tilemaps/TileMapLayer2/TileMapLayer/Deko_Collision/Baum" index="7"]
-position = Vector2(695, 376)
-
 [node name="MenuScreenFade" parent="." instance=ExtResource("8_joduy")]
 visible = false
 offset_left = -1271.0
@@ -282,7 +230,7 @@ position = Vector2(-1, 0)
 spawns = Array[ExtResource("9_rusth")]([SubResource("Resource_rusth")])
 
 [node name="Player" parent="." instance=ExtResource("2_ncryd")]
-position = Vector2(-788, -37)
+position = Vector2(-649, 32)
 
 [node name="Map_Limitations" parent="." instance=ExtResource("10_d1ssd")]
 position = Vector2(-803, 454)
@@ -294,6 +242,5 @@ polygon = PackedVector2Array(-1, -9, 3, -886, 1589, -905, 1594, -31, 1594, -16, 
 [connection signal="body_entered" from="MapTransition" to="." method="_on_static_body_2d_body_entered"]
 [connection signal="body_entered" from="MapTransition" to="." method="_on_map_transition_body_entered"]
 
-[editable path="Tilemaps/TileMapLayer2/TileMapLayer/Deko_Collision"]
 [editable path="MenuScreenFade"]
 [editable path="Map_Limitations"]
