@@ -1,0 +1,101 @@
+[gd_scene load_steps=13 format=3 uid="uid://c3bqr43kg446f"]
+
+[ext_resource type="Script" uid="uid://di3c0irg4ggh4" path="res://Scripts/heart.gd" id="1_aua5x"]
+[ext_resource type="Texture2D" uid="uid://c5ndpkc8lma3g" path="res://Bilder/Items/Herzen_pickup.png" id="2_4o77q"]
+[ext_resource type="AudioStream" uid="uid://bdqh0fmhq0t2a" path="res://assets/SFX/health-pickup.mp3" id="2_pxhl0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxhl0"]
+atlas = ExtResource("2_4o77q")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsh7f"]
+atlas = ExtResource("2_4o77q")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0h2sx"]
+atlas = ExtResource("2_4o77q")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wfmfh"]
+atlas = ExtResource("2_4o77q")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytsyo"]
+atlas = ExtResource("2_4o77q")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yev5p"]
+atlas = ExtResource("2_4o77q")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qcrlo"]
+atlas = ExtResource("2_4o77q")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m6w4j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxhl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jsh7f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0h2sx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wfmfh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytsyo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yev5p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qcrlo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxhl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxhl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxhl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxhl0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxhl0")
+}],
+"loop": true,
+"name": &"Herz",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aua5x"]
+radius = 12.165525
+
+[node name="Heart" type="Area2D" groups=["loot"]]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_aua5x")
+
+[node name="pickup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_pxhl0")
+volume_db = -30.0
+pitch_scale = 3.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_m6w4j")
+animation = &"Herz"
+frame_progress = 0.9050081
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -1)
+shape = SubResource("CircleShape2D_aua5x")
+
+[connection signal="finished" from="pickup" to="." method="_on_pickup_finished"]

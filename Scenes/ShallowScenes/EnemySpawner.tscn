@@ -1,10 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://cx5h32uy8dv4j"]
+[gd_scene load_steps=21 format=3 uid="uid://cx5h32uy8dv4j"]
 
 [ext_resource type="Script" uid="uid://b0ekguduy2xp" path="res://Scripts/Enemy_Ratte.gd" id="1_db84r"]
 [ext_resource type="Texture2D" uid="uid://st2apn33680q" path="res://Bilder/Bilder/Ratte.png" id="2_4l853"]
 [ext_resource type="Script" uid="uid://yq20ggo58v35" path="res://Scripts/Ratte_Animation.gd" id="2_v2i37"]
 [ext_resource type="PackedScene" uid="uid://b32h5x6mjro2a" path="res://Scenes/ShallowScenes/Hurtbox.tscn" id="4_3htn1"]
 [ext_resource type="PackedScene" uid="uid://xfbnk5g2f1pp" path="res://Scenes/ShallowScenes/hitbox.tscn" id="5_k7n7k"]
+[ext_resource type="AudioStream" uid="uid://bxqh6enh2cpit" path="res://assets/SFX/Squeak_1.mp3" id="6_mlcix"]
+[ext_resource type="AudioStream" uid="uid://0xuuq1lqfxl8" path="res://assets/SFX/Squeak_2.mp3" id="7_v2mp0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u7cdh"]
 size = Vector2(8, 6)
@@ -84,6 +86,11 @@ size = Vector2(21, 10)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3htn1"]
 size = Vector2(21, 10)
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dggac"]
+streams_count = 2
+stream_0/stream = ExtResource("6_mlcix")
+stream_1/stream = ExtResource("7_v2mp0")
+
 [node name="Enemy_Ratte" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_db84r")
@@ -101,6 +108,7 @@ script = ExtResource("2_v2i37")
 [node name="Hurtbox" parent="." instance=ExtResource("4_3htn1")]
 collision_layer = 4
 collision_mask = 4
+HurtBoxType = 1
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2(-0.5, 0)
@@ -113,6 +121,11 @@ collision_mask = 2
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_3htn1")
+
+[node name="rat_hit" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_dggac")
+volume_db = -10.0
+bus = &"SFX"
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 

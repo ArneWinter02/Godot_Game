@@ -269,6 +269,8 @@ offset_bottom = 907.0
 
 [node name="MapTransition" type="Area2D" parent="."]
 position = Vector2(758, 4)
+collision_layer = 16
+collision_mask = 16
 script = SubResource("GDScript_joduy")
 
 [node name="Sprite2D" type="Sprite2D" parent="MapTransition"]
@@ -282,7 +284,9 @@ position = Vector2(-1, 0)
 spawns = Array[ExtResource("9_rusth")]([SubResource("Resource_rusth")])
 
 [node name="Player" parent="." instance=ExtResource("2_ncryd")]
-position = Vector2(-788, -37)
+position = Vector2(-783, 3)
+collision_layer = 17
+collision_mask = 17
 
 [node name="Map_Limitations" parent="." instance=ExtResource("10_d1ssd")]
 position = Vector2(-803, 454)

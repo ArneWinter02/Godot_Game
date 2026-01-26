@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c0unbanf4wa0g"]
+[gd_scene load_steps=27 format=3 uid="uid://c0unbanf4wa0g"]
 
 [ext_resource type="Texture2D" uid="uid://b4p8cdu3dsal0" path="res://Bilder/Bilder/Plague_doktor.png" id="1_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://b32h5x6mjro2a" path="res://Scenes/ShallowScenes/Hurtbox.tscn" id="4_1nc73"]
@@ -37,7 +37,7 @@ func animation():
 
 
 
-func _on_hurtbox_hurt(damage: Variant) -> void:
+func _on_hurtbox_hurt(damage, _angle, _knockback):
 	healthpoints-=damage
 	print(healthpoints)
 "
@@ -193,7 +193,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2ttdi"]
-size = Vector2(4.5, 8)
+size = Vector2(3.5, 7)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s8yk7"]
+radius = 6.0207973
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2ttdi"]
+radius = 4.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 scale = Vector2(2, 2)
@@ -221,7 +227,7 @@ collision_mask = 2
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(0.25, -0.5)
+position = Vector2(0.25, 0)
 shape = SubResource("RectangleShape2D_2ttdi")
 debug_color = Color(7.219613e-08, 0.20953652, 0.2507157, 0.41960785)
 
@@ -237,6 +243,22 @@ limit_right = 1420
 limit_bottom = 450
 position_smoothing_enabled = true
 position_smoothing_speed = 20.0
+
+[node name="pickuparea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pickuparea"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("CircleShape2D_s8yk7")
+
+[node name="collectarea" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="collectarea"]
+position = Vector2(0.5, -0.5)
+shape = SubResource("CircleShape2D_2ttdi")
 
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
 

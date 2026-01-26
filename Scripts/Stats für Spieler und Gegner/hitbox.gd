@@ -1,10 +1,11 @@
 extends Area2D
+signal remove_from_array(object) 
 
 
 var speed: int = 400
 var level: int
 var hp = 1.0
-var knock_amount = 100
+var knockback_amount = 100
 var attack_size = 1.0
 
 var target = Vector2.ZERO
@@ -25,4 +26,5 @@ func _on_disablehitboxtimer_timeout():
 func enemy_hit(charge = 1):
 	hp-=charge
 	if hp <= 0:
+		emit_signal("remove_from_array",self)
 		queue_free()
