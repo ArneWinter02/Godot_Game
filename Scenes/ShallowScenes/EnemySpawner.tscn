@@ -91,9 +91,10 @@ streams_count = 2
 stream_0/stream = ExtResource("6_mlcix")
 stream_1/stream = ExtResource("7_v2mp0")
 
-[node name="Enemy_Ratte" type="CharacterBody2D"]
+[node name="Enemy_Ratte2" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_db84r")
+speed = 80.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_u7cdh")
@@ -103,6 +104,7 @@ position = Vector2(-1, -6)
 sprite_frames = SubResource("SpriteFrames_4b1db")
 animation = &"Right"
 autoplay = "Right"
+frame_progress = 0.096839406
 script = ExtResource("2_v2i37")
 
 [node name="Hurtbox" parent="." instance=ExtResource("4_3htn1")]

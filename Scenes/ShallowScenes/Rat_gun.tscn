@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://bipcr6wlyq0e8"]
+
+[ext_resource type="Texture2D" uid="uid://dgiphnmarj1tp" path="res://Bilder/Bilder/Fatrat.png" id="1_kqcyw"]
+[ext_resource type="Script" uid="uid://q7loi1fx2ssa" path="res://Scripts/rat_gun.gd" id="1_vr4l5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ef3ix"]
+atlas = ExtResource("1_kqcyw")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vr4l5"]
+atlas = ExtResource("1_kqcyw")
+region = Rect2(64, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1j528"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ef3ix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vr4l5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Rat_Gun" type="Node2D"]
+script = ExtResource("1_vr4l5")
+
+[node name="Gun" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1j528")
+frame = 1
+frame_progress = 0.53306824
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="Timer2" type="Timer" parent="."]

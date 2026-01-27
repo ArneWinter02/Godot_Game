@@ -1,8 +1,7 @@
-[gd_scene load_steps=27 format=4 uid="uid://wf2x8rrsaw1l"]
+[gd_scene load_steps=28 format=4 uid="uid://wf2x8rrsaw1l"]
 
 [ext_resource type="PackedScene" uid="uid://c0unbanf4wa0g" path="res://Scenes/ShallowScenes/player.tscn" id="1_oa8wt"]
 [ext_resource type="Script" uid="uid://co6tdsoxw5urp" path="res://Scenes/DeeperScene/beginning.gd" id="1_opek6"]
-[ext_resource type="PackedScene" uid="uid://b5kakulprxmw2" path="res://Scenes/UserInterface/ui.tscn" id="2_taqth"]
 [ext_resource type="PackedScene" uid="uid://cn21lfo4rqsxy" path="res://Scenes/UserInterface/MenuScreenFade.tscn" id="4_7i0s5"]
 [ext_resource type="Material" uid="uid://cmbcfxlkxxnwq" path="res://addons/TileMapDual/ghost_material.tres" id="5_fde6h"]
 [ext_resource type="Script" uid="uid://cjk8nronimk5r" path="res://addons/TileMapDual/tile_map_dual.gd" id="6_g6r66"]
@@ -246,10 +245,16 @@ script = ExtResource("12_alt6u")
 enemy = ExtResource("14_nusmd")
 metadata/_custom_type_script = "uid://bum422lrbyv46"
 
+[sub_resource type="Resource" id="Resource_nusmd"]
+script = ExtResource("12_alt6u")
+metadata/_custom_type_script = "uid://bum422lrbyv46"
+
+[sub_resource type="Resource" id="Resource_6vlrc"]
+script = ExtResource("12_alt6u")
+metadata/_custom_type_script = "uid://bum422lrbyv46"
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_opek6")
-
-[node name="UI" parent="." instance=ExtResource("2_taqth")]
 
 [node name="Tilemaps" type="Node2D" parent="."]
 
@@ -377,7 +382,7 @@ position = Vector2(705, 8)
 
 [node name="EnemySpawner" parent="." instance=ExtResource("11_k88m2")]
 position = Vector2(1, 0)
-spawns = Array[ExtResource("12_alt6u")]([SubResource("Resource_2yjik")])
+spawns = Array[ExtResource("12_alt6u")]([SubResource("Resource_2yjik"), SubResource("Resource_nusmd"), SubResource("Resource_6vlrc")])
 
 [node name="Map_Transition" parent="." instance=ExtResource("16_6vlrc")]
 position = Vector2(751, -57)
@@ -416,5 +421,6 @@ polygon = PackedVector2Array(2, 0, 15, 156, 45, 259, 87, 428, 142, 491, 254, 526
 [editable path="Player"]
 [editable path="Player/Hurtbox"]
 [editable path="Player/Node2D"]
+[editable path="Player/UI"]
 [editable path="MenuScreenFade"]
 [editable path="Map_Limitations"]

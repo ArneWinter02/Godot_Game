@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://o7qc7uhlib0y"]
+[gd_scene load_steps=4 format=3 uid="uid://o7qc7uhlib0y"]
 
 [ext_resource type="Texture2D" uid="uid://mk5gstxah2s8" path="res://Bilder/Bilder/Jagdgewehr.png" id="1_fgwse"]
 [ext_resource type="Script" uid="uid://ddg3bqm61rfuw" path="res://Scripts/waffe.gd" id="1_n1sfj"]
+[ext_resource type="AudioStream" uid="uid://c7iw32oons6xs" path="res://assets/SFX/gun-full-reload.mp3" id="3_6dj31"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_n1sfj")
@@ -23,3 +24,8 @@ wait_time = 0.2
 [node name="reload" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6dj31")
+volume_db = -10.0
+pitch_scale = 1.5

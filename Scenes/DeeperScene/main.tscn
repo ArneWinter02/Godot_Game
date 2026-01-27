@@ -1,16 +1,16 @@
-[gd_scene load_steps=25 format=4 uid="uid://b0edelq78t3rx"]
+[gd_scene load_steps=26 format=4 uid="uid://b0edelq78t3rx"]
 
 [ext_resource type="Script" uid="uid://dfjklmvwpv61w" path="res://Scripts/main.gd" id="1_kry3j"]
 [ext_resource type="PackedScene" uid="uid://c0unbanf4wa0g" path="res://Scenes/ShallowScenes/player.tscn" id="2_ncryd"]
 [ext_resource type="Texture2D" uid="uid://d177gdhawyvf2" path="res://Bilder/Bilder/Standardgras_Tile.png" id="3_d1ssd"]
 [ext_resource type="PackedScene" uid="uid://ogwns5datvxm" path="res://Scenes/ShallowScenes/deko_collision.tscn" id="4_d1ssd"]
 [ext_resource type="Texture2D" uid="uid://bu2ypscxchp6m" path="res://Bilder/Bilder/Strand_Tileset.png" id="4_rldox"]
-[ext_resource type="PackedScene" uid="uid://b5kakulprxmw2" path="res://Scenes/UserInterface/ui.tscn" id="7_6bp64"]
 [ext_resource type="PackedScene" uid="uid://cn21lfo4rqsxy" path="res://Scenes/UserInterface/MenuScreenFade.tscn" id="8_joduy"]
 [ext_resource type="PackedScene" uid="uid://c5ko3ee7hlkrm" path="res://Scenes/ShallowScenes/Spawner.tscn" id="8_rusth"]
 [ext_resource type="Script" uid="uid://bum422lrbyv46" path="res://Scripts/Spawn_Info.gd" id="9_rusth"]
 [ext_resource type="PackedScene" uid="uid://b0gcu2ajiwhkk" path="res://Scenes/ShallowScenes/map_limitations.tscn" id="10_d1ssd"]
 [ext_resource type="PackedScene" uid="uid://cx5h32uy8dv4j" path="res://Scenes/ShallowScenes/EnemySpawner.tscn" id="10_rldox"]
+[ext_resource type="PackedScene" uid="uid://cnfe8rw0cdt2x" path="res://Scenes/ShallowScenes/EnemyFat.tscn" id="10_uydpp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rusth"]
 texture = ExtResource("3_d1ssd")
@@ -185,6 +185,15 @@ enemy = ExtResource("10_rldox")
 enemy_num = 1
 metadata/_custom_type_script = "uid://bum422lrbyv46"
 
+[sub_resource type="Resource" id="Resource_r7sps"]
+script = ExtResource("9_rusth")
+time_start = 1
+time_end = 20
+enemy = ExtResource("10_uydpp")
+enemy_num = 1
+enemy_spawn_delay = 5
+metadata/_custom_type_script = "uid://bum422lrbyv46"
+
 [node name="Intro" type="Node2D"]
 position = Vector2(624, -4)
 script = ExtResource("1_kry3j")
@@ -265,8 +274,6 @@ offset_top = -852.0
 offset_right = 1388.0
 offset_bottom = 907.0
 
-[node name="UI" parent="." instance=ExtResource("7_6bp64")]
-
 [node name="MapTransition" type="Area2D" parent="."]
 position = Vector2(758, 4)
 collision_layer = 16
@@ -281,12 +288,15 @@ shape = SubResource("RectangleShape2D_rusth")
 
 [node name="EnemySpawner" parent="." instance=ExtResource("8_rusth")]
 position = Vector2(-1, 0)
-spawns = Array[ExtResource("9_rusth")]([SubResource("Resource_rusth")])
+spawns = Array[ExtResource("9_rusth")]([SubResource("Resource_rusth"), SubResource("Resource_r7sps")])
 
 [node name="Player" parent="." instance=ExtResource("2_ncryd")]
 position = Vector2(-783, 3)
 collision_layer = 17
 collision_mask = 17
+
+[node name="MunitionLabel" parent="Player/UI/Munition/VBoxContainer" index="0"]
+text = "10/10"
 
 [node name="Map_Limitations" parent="." instance=ExtResource("10_d1ssd")]
 position = Vector2(-803, 454)
@@ -300,4 +310,8 @@ polygon = PackedVector2Array(-1, -9, 3, -886, 1589, -905, 1594, -31, 1594, -16, 
 
 [editable path="Tilemaps/TileMapLayer2/TileMapLayer/Deko_Collision"]
 [editable path="MenuScreenFade"]
+[editable path="Player"]
+[editable path="Player/Hurtbox"]
+[editable path="Player/Node2D"]
+[editable path="Player/UI"]
 [editable path="Map_Limitations"]

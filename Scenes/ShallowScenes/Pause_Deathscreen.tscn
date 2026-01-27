@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://b1bpapmyaomy"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0

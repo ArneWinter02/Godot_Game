@@ -1,0 +1,109 @@
+[gd_scene load_steps=17 format=3 uid="uid://cnfe8rw0cdt2x"]
+
+[ext_resource type="Script" uid="uid://b0ekguduy2xp" path="res://Scripts/Enemy_Ratte.gd" id="1_p0qna"]
+[ext_resource type="Texture2D" uid="uid://dgiphnmarj1tp" path="res://Bilder/Bilder/Fatrat.png" id="2_p0qna"]
+[ext_resource type="Script" uid="uid://yq20ggo58v35" path="res://Scripts/Ratte_Animation.gd" id="3_s4ewy"]
+[ext_resource type="PackedScene" uid="uid://b32h5x6mjro2a" path="res://Scenes/ShallowScenes/Hurtbox.tscn" id="4_hbvmb"]
+[ext_resource type="PackedScene" uid="uid://xfbnk5g2f1pp" path="res://Scenes/ShallowScenes/hitbox.tscn" id="5_exvws"]
+[ext_resource type="AudioStream" uid="uid://bxqh6enh2cpit" path="res://assets/SFX/Squeak_1.mp3" id="6_4u8mt"]
+[ext_resource type="AudioStream" uid="uid://0xuuq1lqfxl8" path="res://assets/SFX/Squeak_2.mp3" id="7_wkuhx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u7cdh"]
+size = Vector2(8, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p0qna"]
+atlas = ExtResource("2_p0qna")
+region = Rect2(128, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f4b3m"]
+atlas = ExtResource("2_p0qna")
+region = Rect2(160, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4ewy"]
+atlas = ExtResource("2_p0qna")
+region = Rect2(192, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hbvmb"]
+atlas = ExtResource("2_p0qna")
+region = Rect2(224, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4b1db"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Left",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p0qna")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f4b3m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4ewy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hbvmb")
+}],
+"loop": true,
+"name": &"Right",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7n7k"]
+size = Vector2(21, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3htn1"]
+size = Vector2(21, 10)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dggac"]
+streams_count = 2
+stream_0/stream = ExtResource("6_4u8mt")
+stream_1/stream = ExtResource("7_wkuhx")
+
+[node name="Fatrat" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_p0qna")
+healthpoints = 30.0
+speed = 60.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_u7cdh")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-3, -2)
+sprite_frames = SubResource("SpriteFrames_4b1db")
+animation = &"Right"
+autoplay = "Right"
+frame_progress = 0.68993914
+script = ExtResource("3_s4ewy")
+
+[node name="Hurtbox" parent="." instance=ExtResource("4_hbvmb")]
+collision_layer = 4
+collision_mask = 4
+HurtBoxType = 1
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_k7n7k")
+
+[node name="Hitbox" parent="." instance=ExtResource("5_exvws")]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_3htn1")
+
+[node name="rat_hit" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_dggac")
+volume_db = -5.0
+pitch_scale = 0.5
+bus = &"SFX"
+
+[connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
+
+[editable path="Hurtbox"]
+[editable path="Hitbox"]

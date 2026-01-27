@@ -4,7 +4,7 @@ const bullet_scene = preload("res://Scenes/ShallowScenes/bullet.tscn")
 
 @onready var marker_2d: Marker2D = $Marker2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
-
+@onready var sound = $AudioStreamPlayer
 
 var max_fire_rate: float = 0.20
 var cur_fire_rate = max_fire_rate
@@ -44,5 +44,7 @@ func _physics_process(_delta: float) -> void:
 			shoot()
 		else:
 			reload()
+			sound.play()
 	elif Input.is_action_just_pressed("reload") and cur_ammo<max_ammo:
 		reload()
+		sound.play()

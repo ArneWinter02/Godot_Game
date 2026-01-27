@@ -1,0 +1,99 @@
+[gd_scene load_steps=16 format=3 uid="uid://5lw6uvsgwm3i"]
+
+[ext_resource type="Script" uid="uid://eo7qyg1tvyyk" path="res://Scripts/Stats für Spieler und Gegner/rat_gunner.gd" id="1_kwbg6"]
+[ext_resource type="PackedScene" uid="uid://xfbnk5g2f1pp" path="res://Scenes/ShallowScenes/hitbox.tscn" id="1_oclob"]
+[ext_resource type="AudioStream" uid="uid://bxqh6enh2cpit" path="res://assets/SFX/Squeak_1.mp3" id="2_2kj8t"]
+[ext_resource type="AudioStream" uid="uid://0xuuq1lqfxl8" path="res://assets/SFX/Squeak_2.mp3" id="3_2pwpe"]
+[ext_resource type="Texture2D" uid="uid://dgiphnmarj1tp" path="res://Bilder/Bilder/Fatrat.png" id="4_2kj8t"]
+[ext_resource type="PackedScene" uid="uid://bipcr6wlyq0e8" path="res://Scenes/ShallowScenes/Rat_gun.tscn" id="5_2pwpe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwbg6"]
+size = Vector2(14, 15)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_kwbg6"]
+streams_count = 2
+stream_0/stream = ExtResource("2_2kj8t")
+stream_1/stream = ExtResource("3_2pwpe")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2pwpe"]
+size = Vector2(5, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwbg6"]
+atlas = ExtResource("4_2kj8t")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eo3u7"]
+atlas = ExtResource("4_2kj8t")
+region = Rect2(160, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5hea"]
+atlas = ExtResource("4_2kj8t")
+region = Rect2(192, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4d6a"]
+atlas = ExtResource("4_2kj8t")
+region = Rect2(224, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rl835"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwbg6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eo3u7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5hea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4d6a")
+}],
+"loop": true,
+"name": &"Moving",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2kj8t"]
+atlas = ExtResource("4_2kj8t")
+region = Rect2(106, 108, 7, 6)
+
+[node name="Rat_gunner" type="CharacterBody2D"]
+top_level = true
+position = Vector2(80, 75)
+script = ExtResource("1_kwbg6")
+
+[node name="Hitbox" parent="." instance=ExtResource("1_oclob")]
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_kwbg6")
+
+[node name="rat_hit" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamRandomizer_kwbg6")
+volume_db = -10.0
+bus = &"SFX"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_2pwpe")
+
+[node name="AnimationTree" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rl835")
+animation = &"Moving"
+frame_progress = 0.40589437
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -6.9)
+rotation = -0.08726646
+texture = SubResource("AtlasTexture_2kj8t")
+
+[node name="Rat_Gun" parent="." instance=ExtResource("5_2pwpe")]
+position = Vector2(8, -5)
+
+[editable path="Hitbox"]

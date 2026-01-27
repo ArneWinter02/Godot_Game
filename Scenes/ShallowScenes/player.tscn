@@ -1,29 +1,29 @@
-[gd_scene load_steps=27 format=3 uid="uid://c0unbanf4wa0g"]
+[gd_scene load_steps=28 format=3 uid="uid://c0unbanf4wa0g"]
 
 [ext_resource type="Texture2D" uid="uid://b4p8cdu3dsal0" path="res://Bilder/Bilder/Plague_doktor.png" id="1_cvnsp"]
 [ext_resource type="PackedScene" uid="uid://b32h5x6mjro2a" path="res://Scenes/ShallowScenes/Hurtbox.tscn" id="4_1nc73"]
+[ext_resource type="PackedScene" uid="uid://b5kakulprxmw2" path="res://Scenes/UserInterface/ui.tscn" id="4_2ttdi"]
 [ext_resource type="PackedScene" uid="uid://o7qc7uhlib0y" path="res://Scenes/ShallowScenes/Waffe.tscn" id="4_vgqql"]
 
 [sub_resource type="GDScript" id="GDScript_vgqql"]
 script/source = "extends CharacterBody2D
 
+
+@export var max_ammo = 10
+@export var ammo_used = 1
+var cur_ammo = max_ammo
 @export var healthpoints = 60.0
+var healthcur = healthpoints
 var direction: Vector2 = Vector2(1,1)
 @export var speed: int = 100
 var dir
 signal shoot(_pos: Vector2, dir: Vector2) 
-
+signal reload()
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var timer = $LocalReload
+@onready var lebensbalken = $UI/Leben/HealthBar
+@onready var munitionLabl = $UI/Munition/VBoxContainer/MunitionLabel
 
-func _ready() -> void:
-	pass
-
-func _physics_process(_float):
-	direction = Input.get_vector(\"left\", \"right\", \"up\", \"down\")
-	velocity = direction * speed
-	animation()
-	move_and_slide()
-	
 func animation():
 	dir = get_local_mouse_position()
 	if direction:
@@ -34,12 +34,41 @@ func animation():
 			animated_sprite.play(\"idle_right\")
 		elif dir.x < 0:
 			animated_sprite.play(\"idle_left\")
+func _on_hurtbox_hurt(damage):
+	healthcur -= damage
+	set_healthbar(healthcur, healthpoints)
+func set_healthbar(set_value, set_max_value):
+	lebensbalken.value = set_value
+	lebensbalken.max_value = set_max_value
+func ammo_calc():
+	if not timer.is_stopped():
+		return
+	if Input.is_action_just_pressed(\"shoot\"):
+		cur_ammo -= ammo_used
+		if cur_ammo >= 0:
+			munitionLabl.text = str(cur_ammo)+ \"/\" + str(max_ammo)
+		elif cur_ammo<=0:
+			munitionLabl.text = str(0) + \"/\" + str(max_ammo)
+	elif Input.is_action_just_pressed(\"reload\") and cur_ammo<max_ammo:
+		ammo_update()
+func ammo_update():
+	timer.start()
+	cur_ammo = max_ammo
+func _ready() -> void:
+	pass
+func _physics_process(_float):
+	if cur_ammo >=0:
+		ammo_calc()
+	else:
+		ammo_update()
+	direction = Input.get_vector(\"left\", \"right\", \"up\", \"down\")
+	velocity = direction * speed
+	animation()
+	move_and_slide()
 
 
-
-func _on_hurtbox_hurt(damage, _angle, _knockback):
-	healthpoints-=damage
-	print(healthpoints)
+func _on_local_reload_timeout() -> void:
+	munitionLabl.text = str(cur_ammo)+ \"/\" + str(max_ammo)
 "
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ik7gq"]
@@ -223,6 +252,7 @@ autoplay = "for_right"
 [node name="Hurtbox" parent="." instance=ExtResource("4_1nc73")]
 collision_layer = 2
 collision_mask = 2
+HurtBoxType = 2
 
 [node name="CollisionShape2D" parent="Hurtbox" index="0"]
 light_mask = 2
@@ -260,7 +290,19 @@ collision_mask = 8
 position = Vector2(0.5, -0.5)
 shape = SubResource("CircleShape2D_2ttdi")
 
+[node name="UI" parent="." instance=ExtResource("4_2ttdi")]
+
+[node name="MunitionLabel" parent="UI/Munition/VBoxContainer" index="0"]
+text = ""
+
+[node name="LocalReload" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [connection signal="hurt" from="Hurtbox" to="." method="_on_hurtbox_hurt"]
+[connection signal="timeout" from="Node2D/reload" to="." method="_on_reload_timeout"]
+[connection signal="timeout" from="LocalReload" to="." method="_on_local_reload_timeout"]
 
 [editable path="Hurtbox"]
 [editable path="Node2D"]
+[editable path="UI"]

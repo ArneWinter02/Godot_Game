@@ -26,7 +26,7 @@ func death():
 	enemy_death.global_position = global_position
 	get_parent().call_deferred("add_child",enemy_death)
 	queue_free()
-func _on_hurtbox_hurt(damage,):
+func _on_hurtbox_hurt(damage):
 	healthpoints -= damage
 	if healthpoints <= 0:
 		death()

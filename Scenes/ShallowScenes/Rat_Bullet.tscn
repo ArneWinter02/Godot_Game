@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://c477hchgxem1u"]
+
+[ext_resource type="AudioStream" uid="uid://dft0axe4hmbdj" path="res://assets/SFX/Rat_Gunshot.mp3" id="1_lwl4h"]
+[ext_resource type="Script" uid="uid://b8nmn5p04fth1" path="res://Scripts/rat_bullet.gd" id="1_qkp54"]
+[ext_resource type="Texture2D" uid="uid://dgiphnmarj1tp" path="res://Bilder/Bilder/Fatrat.png" id="2_qkp54"]
+[ext_resource type="PackedScene" uid="uid://xfbnk5g2f1pp" path="res://Scenes/ShallowScenes/hitbox.tscn" id="3_xufml"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqfe5"]
+atlas = ExtResource("2_qkp54")
+region = Rect2(45, 111, 5, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_go48m"]
+size = Vector2(5, 4)
+
+[node name="Bullet" type="Node2D"]
+script = ExtResource("1_qkp54")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_lwl4h")
+pitch_scale = 2.5
+bus = &"SFX"
+
+[node name="bullet" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_jqfe5")
+
+[node name="Hitbox" parent="." instance=ExtResource("3_xufml")]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+shape = SubResource("RectangleShape2D_go48m")
+
+[editable path="Hitbox"]
